@@ -1,0 +1,50 @@
+/* FlashClip · botões no desenho da home e botões magnéticos.
+   Arquivo escopado: cada página importa por último, como o experiencia.css do site original,
+   para vencer o CSS do cabeçalho e dos formulários. A barra de áudio e a transição ficam em
+   src/estilos/global/experiencia.css. */
+:root {
+  --fc-ink: #030508;
+  --fc-paper: #f2f2f2;
+  --fc-gold: #f5bd3d;
+  --fc-line: rgba(245, 189, 61, .16);
+}
+
+/* Entrar e Inscrições com o mesmo desenho do cabeçalho da home em todas as páginas. */
+:is(.navbar, .menu-mobile) .usuario { background: transparent; color: var(--fc-gold); border: 1px solid var(--fc-line); box-shadow: none; }
+:is(.navbar, .menu-mobile) .usuario:hover { background: #f5bd3d12; border-color: #f5bd3d70; }
+:is(.navbar, .menu-mobile) .inscricoes { background: var(--fc-paper); color: var(--fc-ink); border: 0; border-radius: 3px; font-weight: 600; }
+.nav-acoes .inscricoes { font-size: 12px; padding: 12px 19px; }
+:is(.navbar, .menu-mobile) .inscricoes:hover { background: #ffffff; }
+
+/* Entrar, Criar conta e Confirmar matrícula seguem o botão dourado da home. */
+.botao-login, .botao-cadastro, .botao-confirmar {
+  display: flex; align-items: center; justify-content: center; gap: 24px;
+  border: 1px solid var(--fc-gold); border-radius: 3px;
+  background: var(--fc-gold); color: var(--fc-ink);
+  font-family: inherit; font-size: 13px; font-weight: 600; letter-spacing: .01em;
+}
+.botao-login::after, .botao-cadastro::after { content: "↗"; font-size: 15px; line-height: 1; }
+.botao-confirmar .seta-confirmar { font-size: 17px; }
+:is(.botao-login, .botao-cadastro, .botao-confirmar):hover:not(:disabled) { background: #ffd45e; filter: none; }
+
+/* Botão magnético: o JS puxa o botão na direção do cursor e marca onde ele está. */
+.fc-magnetic {
+  translate: var(--fc-mx, 0px) var(--fc-my, 0px);
+  transition: translate .45s cubic-bezier(.2, .9, .25, 1.3), background .25s, box-shadow .3s, border-color .25s;
+}
+.fc-magnetic.fc-atraido { transition: translate .12s linear, background .25s, box-shadow .3s, border-color .25s; }
+.fc-magnetic:hover:not(:disabled) {
+  background-image: radial-gradient(circle at var(--fc-gx, 50%) var(--fc-gy, 50%), #ffffff8c, transparent 58%);
+  box-shadow: 0 10px 30px -8px #f5bd3d70, 0 0 0 1px #f5bd3d40;
+}
+.fc-magnetic.fc-press { animation: fc-press .55s ease-out; }
+@keyframes fc-press {
+  0% { box-shadow: 0 0 0 0 #f5bd3dcc, 0 10px 30px -8px #f5bd3d70; scale: .96; }
+  35% { scale: 1.02; }
+  100% { box-shadow: 0 0 0 16px #f5bd3d00, 0 10px 30px -8px #f5bd3d00; scale: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fc-magnetic { translate: none; }
+  .fc-magnetic.fc-press { animation: none; }
+}

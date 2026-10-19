@@ -1,0 +1,2613 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(245, 189, 61, 0.035),
+      transparent 35%
+    ),
+    #030508;
+
+  color: #ffffff;
+}
+
+/* =========================
+   FUNDO GERAL DA HOME
+========================= */
+
+main {
+  position: relative;
+  isolation: isolate;
+
+  background: #030508;
+
+  overflow: hidden;
+}
+
+/* =========================
+   LUZES DO FUNDO
+========================= */
+
+main::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(0, 255, 170, 0.035),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 85% 45%,
+      rgba(255, 30, 55, 0.035),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 50% 75%,
+      rgba(245, 189, 61, 0.025),
+      transparent 20%
+    );
+
+  z-index: -1;
+}
+
+/* =========================
+   LISTRAS DIAGONAIS DO FUNDO
+========================= */
+
+main::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 48%,
+      rgba(0, 255, 170, 0.025) 49%,
+      rgba(0, 255, 170, 0.08) 49.15%,
+      rgba(0, 255, 170, 0.025) 49.3%,
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 68%,
+      rgba(255, 30, 55, 0.025) 69%,
+      rgba(255, 30, 55, 0.07) 69.15%,
+      rgba(255, 30, 55, 0.025) 69.3%,
+      transparent 70%
+    );
+
+  background-size:
+    900px 900px,
+    1100px 1100px;
+
+  background-position:
+    0 0,
+    400px 300px;
+
+  z-index: -1;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 20px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(255, 255, 255, 0.035),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(0, 255, 140, 0.045),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 60%,
+      rgba(255, 0, 45, 0.035),
+      transparent 30%
+    ),
+    transparent;
+}
+
+/* =========================
+   DECORAÇÃO DO HERO
+========================= */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+
+        /* linha verde */
+    linear-gradient(
+      135deg,
+      transparent 10%,
+      rgba(0, 255, 140, 0.35) 10.08%,
+      transparent 10.18%
+    ),
+    /* linha vermelha */
+    linear-gradient(
+        315deg,
+        transparent 12%,
+        rgba(255, 0, 40, 0.3) 12.08%,
+        transparent 12.18%
+      ),
+    /* linha vermelha */
+    linear-gradient(
+        135deg,
+        transparent 76%,
+        rgba(255, 0, 40, 0.4) 76.08%,
+        transparent 76.18%
+      ),
+    /* linha verde */
+    linear-gradient(
+        315deg,
+        transparent 82%,
+        rgba(0, 255, 140, 0.25) 82.08%,
+        transparent 82.18%
+      ),
+    /* floco superior esquerdo */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill='none' stroke='%2300a96b' stroke-width='2' opacity='.22'%3E%3Cpath d='M130 15v230M15 130h230M49 49l162 162M211 49L49 211'/%3E%3Cpath d='M130 42l-14 14m14-14l14 14M130 218l-14-14m14 14l14-14M42 130l14-14m-14 14l14 14M218 130l-14-14m14 14l-14 14'/%3E%3C/g%3E%3C/svg%3E"),
+    /* floco inferior direito */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' stroke='%23d7192f' stroke-width='2' opacity='.18'%3E%3Cpath d='M150 15v270M15 150h270M54 54l192 192M246 54L54 246'/%3E%3Cpath d='M150 48l-15 15m15-15l15 15M150 252l-15-15m15 15l15-15M48 150l15-15m-15 15l15 15M252 150l-15-15m15 15l-15 15'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat:
+    no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+
+  background-position:
+    center,
+    center,
+    center,
+    center,
+    -85px -35px,
+    calc(100% + 80px) calc(100% + 70px);
+
+  background-size:
+    auto,
+    auto,
+    auto,
+    auto,
+    260px 260px,
+    300px 300px;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   PONTOS E ESTRELAS DO HERO
+========================= */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 11% 42%, #ff2038 0 2px, transparent 3px),
+    radial-gradient(circle at 7% 80%, #00d982 0 2px, transparent 3px),
+    radial-gradient(circle at 90% 61%, #00d982 0 2px, transparent 3px),
+    radial-gradient(circle at 93% 64%, #ff2038 0 2px, transparent 3px),
+    radial-gradient(ellipse at 94% 24%, #ffd45a 0 2px, transparent 3px),
+    radial-gradient(ellipse at 7% 50%, #ffd45a 0 2px, transparent 3px);
+
+  opacity: 0.85;
+}
+
+/* =========================
+   CONTEÚDO DO HERO
+========================= */
+
+.conteudo {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* =========================
+   CATEGORIA
+========================= */
+
+.categoria {
+  margin-bottom: 20px;
+
+  color: #d6d6d6;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+/* =========================
+   TÍTULO PRINCIPAL
+========================= */
+
+h1 {
+  margin-bottom: 25px;
+
+  font-size: clamp(70px, 12vw, 150px);
+  line-height: 0.9;
+  letter-spacing: -7px;
+
+  background: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #ffffff 42%,
+    #f5bd3d 58%,
+    #ffffff 75%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   SUBTÍTULO
+========================= */
+
+.subtitulo {
+  max-width: 550px;
+
+  margin: 0 auto;
+
+  color: #a6a6a6;
+
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* =========================
+   CONTADOR
+========================= */
+
+.contador {
+  margin: 65px auto 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.tempo {
+  position: relative;
+
+  min-width: 115px;
+
+  padding: 18px 15px 14px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.012)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 12px;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tempo:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(245, 189, 61, 0.45);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(245, 189, 61, 0.05);
+}
+
+.tempo strong {
+  font-size: 64px;
+  line-height: 1;
+
+  font-weight: 500;
+  letter-spacing: -4px;
+
+  color: #ffffff;
+}
+
+.tempo span {
+  margin-top: 10px;
+
+  color: #73777b;
+
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.separador {
+  margin-bottom: 25px;
+
+  color: rgba(245, 189, 61, 0.55);
+
+  font-size: 35px;
+}
+
+/* =========================
+   BOTÕES DO HERO
+========================= */
+
+.botoes {
+  display: flex;
+  justify-content: center;
+
+  gap: 15px;
+}
+
+.botoes a {
+  padding: 15px 27px;
+
+  border-radius: 30px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.botoes a:hover {
+  transform: translateY(-2px);
+}
+
+.botao-principal {
+  background: #ffffff;
+  color: #111111;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.botao-principal:hover {
+  background: #f5bd3d;
+
+  box-shadow: 0 8px 30px rgba(245, 189, 61, 0.18);
+}
+
+.botao-secundario {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #ffffff;
+}
+
+.botao-secundario:hover {
+  border-color: rgba(245, 189, 61, 0.6);
+
+  background: rgba(245, 189, 61, 0.05);
+}
+
+/* =========================
+   INFORMAÇÕES DO EVENTO
+========================= */
+
+.informacoes-evento {
+  margin-top: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 80px;
+
+  text-align: center;
+}
+
+.informacoes-evento div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.informacoes-evento span {
+  color: #f9f9f9;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.informacoes-evento strong {
+  color: #d8d8d8;
+
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* =========================
+   SOBRE O FLASHCLIP
+========================= */
+
+.sobre {
+  position: relative;
+  overflow: hidden;
+
+  padding: 110px 7% 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(0, 255, 140, 0.035),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(255, 0, 45, 0.025),
+      transparent 28%
+    ),
+    transparent;
+}
+
+.sobre::before {
+  content: "❄";
+
+  position: absolute;
+
+  top: 25px;
+  left: 35px;
+
+  color: rgba(0, 106, 172, 0.338);
+
+  font-size: 150px;
+
+  pointer-events: none;
+}
+
+.sobre::after {
+  content: "❄";
+
+  position: absolute;
+
+  right: 40px;
+  bottom: 15px;
+
+  color: rgba(0, 106, 172, 0.338);
+
+  font-size: 120px;
+
+  pointer-events: none;
+}
+
+.sobre-conteudo {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.sobre-categoria {
+  display: inline-block;
+
+  margin-bottom: 25px;
+
+  color: #f5bd3d;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.sobre h2 {
+  max-width: 900px;
+
+  margin: 0 auto 15px;
+
+  color: #ffffff;
+
+  font-size: clamp(40px, 6vw, 65px);
+  line-height: 1.1;
+  letter-spacing: -3px;
+}
+
+.sobre h3 {
+  margin-bottom: 25px;
+
+  color: #f5bd3d;
+
+  font-size: clamp(18px, 3vw, 25px);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.sobre-descricao {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  color: #9da1a5;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.sobre-descricao strong {
+  color: #f5bd3d;
+
+  font-weight: 600;
+}
+
+/* =========================
+   DESTAQUES DO SOBRE
+========================= */
+
+.sobre-destaques {
+  max-width: 1000px;
+
+  margin: 60px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.destaque {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 250px;
+
+  padding: 35px 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.045),
+    rgba(255, 255, 255, 0.01)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.destaque:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(245, 189, 61, 0.35);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(245, 189, 61, 0.04);
+}
+
+.destaque-icone {
+  width: 65px;
+  height: 65px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #f5bd3d;
+
+  background: rgba(245, 189, 61, 0.08);
+
+  border: 1px solid rgba(245, 189, 61, 0.12);
+
+  border-radius: 50%;
+}
+
+.destaque h4 {
+  margin-bottom: 12px;
+
+  color: #ffffff;
+
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.destaque p {
+  max-width: 270px;
+
+  margin: 0 auto;
+
+  color: #9da1a5;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================
+   PARCEIROS
+========================= */
+
+.parceiros {
+  position: relative;
+  overflow: hidden;
+
+  padding: 110px 7%;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 205, 70, 0.045),
+      transparent 35%
+    ),
+    #030508;
+
+  text-align: center;
+}
+
+.parceiros::before {
+  content: "✦";
+
+  position: absolute;
+
+  left: 8%;
+  top: 25%;
+
+  color: rgba(255, 205, 70, 0.15);
+
+  font-size: 45px;
+
+  pointer-events: none;
+}
+
+.parceiros::after {
+  content: "✦";
+
+  position: absolute;
+
+  right: 8%;
+  bottom: 25%;
+
+  color: rgba(255, 255, 255, 0.1);
+
+  font-size: 35px;
+
+  pointer-events: none;
+}
+
+.parceiros-titulo {
+  max-width: 700px;
+
+  margin: 0 auto 55px;
+}
+
+.parceiros-titulo span {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #f5bd3d;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.parceiros-titulo h2 {
+  margin-bottom: 16px;
+
+  color: #ffffff;
+
+  font-size: clamp(38px, 5vw, 55px);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.parceiros-titulo p {
+  color: #999da1;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.lista-parceiros {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+}
+
+.parceiro {
+  width: 300px;
+  height: 180px;
+
+  padding: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    145deg,
+    rgba(22, 29, 37, 0.96),
+    rgba(8, 12, 16, 0.96)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+
+  text-decoration: none;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.25s,
+    border-color 0.25s,
+    background 0.25s,
+    box-shadow 0.25s;
+}
+
+.parceiro:hover {
+  transform: translateY(-6px);
+
+  border-color: #f5bd3d;
+
+  background: linear-gradient(
+    145deg,
+    rgba(28, 35, 43, 0.98),
+    rgba(10, 15, 20, 0.98)
+  );
+
+  box-shadow: 0 20px 50px rgba(245, 189, 61, 0.08);
+}
+
+.parceiro img {
+  max-width: 100%;
+  max-height: 100px;
+
+  object-fit: contain;
+
+  transition: transform 0.25s;
+}
+
+.parceiro:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   POR QUE PARTICIPAR
+========================= */
+
+.motivos {
+  position: relative;
+  overflow: hidden;
+
+  padding: 110px 7%;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  background:
+    radial-gradient(
+      circle at 10% 50%,
+      rgba(0, 255, 140, 0.035),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 50%,
+      rgba(255, 0, 45, 0.035),
+      transparent 28%
+    ),
+    transparent;
+}
+
+.motivos::before {
+  content: "❄";
+
+  position: absolute;
+
+  left: -30px;
+  bottom: 10px;
+
+  color: rgba(8, 112, 65, 0.313);
+
+  font-size: 180px;
+
+  pointer-events: none;
+}
+
+.motivos::after {
+  content: "❄";
+
+  position: absolute;
+
+  right: -25px;
+  top: 20px;
+
+  color: rgba(8, 112, 65, 0.313);
+
+  font-size: 160px;
+
+  pointer-events: none;
+}
+
+.titulo-motivos {
+  max-width: 700px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.titulo-motivos span {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #f5bd3d;
+
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.titulo-motivos h2 {
+  margin-bottom: 16px;
+
+  color: #ffffff;
+
+  font-size: clamp(32px, 5vw, 52px);
+  letter-spacing: -2px;
+
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.04);
+}
+
+.titulo-motivos p {
+  color: #999da1;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.lista-motivos {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.card-motivo {
+  position: relative;
+
+  min-height: 290px;
+
+  padding: 35px 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: linear-gradient(
+    145deg,
+    rgba(22, 29, 37, 0.96),
+    rgba(9, 13, 18, 0.96)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
+
+  transition:
+    transform 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+
+.card-motivo:hover {
+  transform: translateY(-6px);
+
+  border-color: #f5bd3d;
+
+  box-shadow: 0 20px 45px rgba(245, 189, 61, 0.07);
+}
+
+.numero-motivo {
+  position: absolute;
+
+  top: 16px;
+  left: 18px;
+
+  color: #686c70;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.icone-motivo {
+  width: 75px;
+  height: 75px;
+
+  margin-bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #f5bd3d;
+
+  background: rgba(245, 189, 61, 0.07);
+
+  border: 1px solid rgba(245, 189, 61, 0.1);
+
+  border-radius: 50%;
+}
+
+.card-motivo h3 {
+  width: 100%;
+
+  margin-bottom: 12px;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.card-motivo p {
+  max-width: 260px;
+
+  color: #9da1a5;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================
+   CURSOS
+========================= */
+
+.cursos {
+  position: relative;
+
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 100px 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(245, 189, 61, 0.035),
+      transparent 35%
+    ),
+    transparent;
+}
+
+.cursos::before {
+  content: "✦";
+
+  position: absolute;
+
+  top: 35px;
+  right: 20px;
+
+  color: rgba(255, 205, 70, 0.2);
+
+  font-size: 50px;
+
+  pointer-events: none;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+.titulo-cursos {
+  margin-bottom: 40px;
+
+  text-align: center;
+}
+
+.titulo-cursos h2 {
+  margin-bottom: 10px;
+
+  color: #ffffff;
+
+  font-size: 34px;
+  font-weight: 700;
+
+  letter-spacing: -1px;
+
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.04);
+}
+
+.titulo-cursos p {
+  color: #92969a;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   LISTA DE CURSOS
+========================= */
+
+.lista-cursos {
+  width: 100%;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  align-items: stretch;
+
+  gap: 22px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card-curso {
+  position: relative;
+
+  width: calc((100% - 44px) / 3);
+
+  max-width: 370px;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: linear-gradient(
+    145deg,
+    rgba(22, 29, 37, 0.97),
+    rgba(9, 14, 19, 0.97)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 16px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.28);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* =========================
+   LINHA DECORATIVA
+========================= */
+
+.card-curso:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(245, 189, 61, 0.42);
+
+  box-shadow:
+    0 22px 48px rgba(0, 0, 0, 0.36),
+    0 0 30px rgba(245, 189, 61, 0.04);
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho-curso {
+  position: relative;
+
+  width: 100%;
+
+  height: 180px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: linear-gradient(145deg, #10161b, #080d11);
+}
+
+/* =========================
+   IMAGEM DO CURSO
+========================= */
+
+.imagem-curso {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  padding: 12px 25px;
+
+  background: linear-gradient(145deg, #10161b, #080d11);
+
+  opacity: 0.96;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.card-curso:hover .imagem-curso {
+  transform: scale(1.04);
+
+  opacity: 1;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status-curso {
+  position: absolute;
+
+  top: 13px;
+  right: 13px;
+
+  width: fit-content;
+
+  padding: 7px 11px;
+
+  color: #ffffff;
+
+  background: rgba(5, 9, 12, 0.86);
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 20px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.9px;
+
+  text-transform: uppercase;
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.conteudo-curso {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 22px;
+}
+
+.conteudo-curso h3 {
+  margin-bottom: 10px;
+
+  color: #ffffff;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.5px;
+}
+
+.descricao-curso {
+  display: -webkit-box;
+
+  margin: 0;
+
+  color: #a2a8ae;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  overflow: hidden;
+
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+}
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.informacoes-curso {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 9px;
+
+  margin-top: 20px;
+}
+
+.info-item {
+  min-width: 0;
+
+  padding: 11px 10px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 10px;
+}
+
+.icone-info {
+  flex-shrink: 0;
+
+  color: #f5bd3d;
+
+  font-size: 17px;
+
+  line-height: 1.2;
+}
+
+.info-item small {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #7c848c;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+}
+
+.info-item strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  line-height: 1.25;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   INSTRUTORES
+========================= */
+
+.instrutores-curso {
+  margin-top: 18px;
+
+  padding-top: 15px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.titulo-instrutores {
+  margin-bottom: 9px;
+}
+
+.titulo-instrutores span {
+  color: #737b83;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.lista-instrutores {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.avatares-instrutores {
+  display: flex;
+
+  align-items: center;
+}
+
+.instrutor-avatar {
+  width: 32px;
+  height: 32px;
+
+  margin-left: -7px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #171d24;
+
+  border: 2px solid #11161b;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.instrutor-avatar:first-child {
+  margin-left: 0;
+}
+
+.imagem-instrutor {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.instrutores-restantes {
+  color: #f5bd3d;
+
+  background: #20272e;
+}
+
+.quantidade-instrutores {
+  flex: 1;
+
+  overflow: hidden;
+
+  color: #858d95;
+
+  font-size: 11px;
+
+  text-align: right;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.rodape-curso {
+  padding: 0 22px 22px;
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+.botao-curso {
+  width: 100%;
+
+  min-height: 42px;
+
+  padding: 11px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #111111;
+
+  background: #f5bd3d;
+
+  border-radius: 9px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.botao-curso:hover {
+  transform: translateY(-2px);
+
+  background: #ffd45e;
+
+  box-shadow: 0 8px 22px rgba(245, 189, 61, 0.14);
+}
+
+/* =========================
+   ESTADOS
+========================= */
+
+.vagas-esgotadas,
+.curso-matriculado {
+  width: 100%;
+
+  min-height: 42px;
+
+  padding: 10px 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 9px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  text-align: center;
+}
+
+.vagas-esgotadas {
+  color: #999999;
+
+  background: #222830;
+
+  border: 1px solid #353d47;
+}
+
+.curso-matriculado {
+  color: #111111;
+
+  background: #f5bd3d;
+}
+
+/* =========================
+   CARREGANDO
+========================= */
+
+.estado-cursos {
+  width: 100%;
+
+  min-height: 220px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  color: #777777;
+
+  border: 1px solid #292f36;
+
+  border-radius: 12px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 950px) {
+  .card-curso {
+    width: calc((100% - 22px) / 2);
+  }
+}
+
+@media (max-width: 700px) {
+  .cursos {
+    width: 90%;
+
+    padding: 75px 0;
+  }
+
+  .titulo-cursos h2 {
+    font-size: 29px;
+  }
+
+  .lista-cursos {
+    gap: 18px;
+  }
+
+  .card-curso {
+    width: 100%;
+
+    max-width: 380px;
+  }
+
+  .cabecalho-curso {
+    height: 175px;
+  }
+
+  .conteudo-curso {
+    padding: 20px;
+  }
+
+  .rodape-curso {
+    padding: 0 20px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cursos {
+    width: 90%;
+  }
+
+  .informacoes-curso {
+    gap: 6px;
+  }
+
+  .info-item {
+    padding: 9px 7px;
+
+    gap: 6px;
+  }
+
+  .icone-info {
+    font-size: 14px;
+  }
+
+  .info-item small {
+    font-size: 7.5px;
+  }
+
+  .info-item strong {
+    font-size: 10.5px;
+  }
+
+  .quantidade-instrutores {
+    font-size: 10px;
+  }
+}
+
+/* =========================
+   RESPONSIVO DOS CURSOS
+========================= */
+
+@media (max-width: 900px) {
+  .lista-cursos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card-curso,
+  .card-curso:nth-last-child(2),
+  .card-curso:last-child {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .cursos {
+    width: 90%;
+
+    padding: 75px 0;
+  }
+
+  .titulo-cursos h2 {
+    font-size: 29px;
+  }
+
+  .lista-cursos {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .card-curso,
+  .card-curso:nth-last-child(2),
+  .card-curso:last-child {
+    grid-column: auto;
+  }
+
+  .cabecalho-curso {
+    height: 175px;
+  }
+
+  .conteudo-curso {
+    padding: 20px;
+  }
+
+  .rodape-curso {
+    padding: 0 20px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cursos {
+    width: 90%;
+  }
+
+  .informacoes-curso {
+    gap: 6px;
+  }
+
+  .info-item {
+    padding: 9px 7px;
+
+    gap: 6px;
+  }
+
+  .icone-info {
+    font-size: 14px;
+  }
+
+  .info-item small {
+    font-size: 7.5px;
+  }
+
+  .info-item strong {
+    font-size: 10.5px;
+  }
+
+  .quantidade-instrutores {
+    font-size: 10px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .lista-motivos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sobre-destaques {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: calc(100vh - 70px);
+
+    padding: 60px 20px;
+  }
+
+  h1 {
+    font-size: 70px;
+    letter-spacing: -4px;
+  }
+
+  .subtitulo {
+    font-size: 16px;
+  }
+
+  .contador {
+    gap: 8px;
+
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+  .tempo {
+    min-width: 65px;
+  }
+
+  .tempo strong {
+    font-size: 40px;
+    letter-spacing: -2px;
+  }
+
+  .tempo span {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .separador {
+    margin-bottom: 15px;
+
+    font-size: 30px;
+  }
+
+  .botoes {
+    gap: 10px;
+  }
+
+  .botoes a {
+    padding: 13px 20px;
+  }
+
+  .informacoes-evento {
+    margin-top: 50px;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .sobre {
+    padding: 80px 5%;
+  }
+
+  .sobre h2 {
+    letter-spacing: -2px;
+    font-size: 40px;
+  }
+
+  .sobre h3 {
+    font-size: 19px;
+  }
+
+  .sobre-descricao {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .sobre-destaques {
+    grid-template-columns: 1fr;
+
+    margin-top: 40px;
+  }
+
+  .destaque {
+    min-height: 220px;
+
+    padding: 30px 20px;
+  }
+
+  .cursos {
+    width: 90%;
+
+    padding: 75px 0;
+  }
+
+  .titulo-cursos h2 {
+    font-size: 27px;
+  }
+
+  .lista-cursos {
+    grid-template-columns: 1fr;
+  }
+
+  .motivos {
+    padding: 75px 5%;
+  }
+
+  .titulo-motivos {
+    margin-bottom: 35px;
+  }
+
+  .lista-motivos {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .card-motivo {
+    min-height: 260px;
+
+    padding: 40px 25px;
+  }
+
+  .card-motivo h3 {
+    font-size: 19px;
+  }
+
+  .parceiros {
+    padding: 75px 5%;
+  }
+
+  .lista-parceiros {
+    width: 100%;
+  }
+
+  .parceiro {
+    width: 100%;
+    max-width: 300px;
+
+    height: 160px;
+  }
+}
+
+/* =========================
+   CELULAR PEQUENO
+========================= */
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 58px;
+    letter-spacing: -3px;
+  }
+
+  .contador {
+    gap: 4px;
+  }
+
+  .tempo {
+    min-width: 58px;
+  }
+
+  .tempo strong {
+    font-size: 34px;
+  }
+
+  .separador {
+    font-size: 25px;
+  }
+
+  .botoes {
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 260px;
+
+    margin: 0 auto;
+  }
+
+  .botoes a {
+    width: 100%;
+  }
+}
+
+/* ==========================================================
+   FLASHCLIP — CENÁRIO NATALINO DA HOME
+   Regras complementares ao CSS original acima.
+
+   Objetivos:
+   - Preservar a estrutura, os cards e as interações existentes.
+   - Manter o SVG do Hero na primeira seção.
+   - Usar um céu estrelado compartilhado nas demais seções.
+   - Mostrar árvore com presentes e outras ilustrações somente
+     quando houver espaço seguro.
+   - Em telas pequenas, deixar apenas o céu estrelado, com uma
+     composição própria para celular e contraste reforçado.
+   ========================================================== */
+
+/* HERO: cenário já utilizado pelo projeto. */
+.hero {
+  background-color: #030508;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(3, 5, 8, 0.18) 0%,
+      rgba(3, 5, 8, 0.04) 48%,
+      rgba(3, 5, 8, 0) 72%
+    ),
+    url("../imagens/Cenario/flashclip-tela-principal-2560.webp");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  background-size: cover, cover;
+}
+
+/* Remove as antigas linhas, flocos e pontos do Hero. */
+.hero::before,
+.hero::after {
+  content: none !important;
+  display: none !important;
+  background-image: none !important;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(3, 5, 8, 0.08) 0%,
+        rgba(3, 5, 8, 0.02) 48%,
+        rgba(3, 5, 8, 0.12) 100%
+      ),
+      url("../imagens/Cenario/flashclip-tela-principal-1280.webp");
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, right bottom;
+    background-size: cover, auto 48%;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero {
+    background-size: cover, auto 42%;
+  }
+}
+
+/* MAIN: cenário compartilhado que acompanha a rolagem. */
+main {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #030508;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+  background-image: url("../imagens/Decoracoes/ceu-estrelado-natal.svg");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 100% 1100px;
+  opacity: 0.78;
+}
+
+/* Desliga as antigas listras diagonais do main. */
+main::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Coloca as seções sobre o cenário global. */
+main > section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Seções transparentes para deixar o céu aparecer sem mudar os cards. */
+.sobre,
+.parceiros,
+.motivos,
+.cursos {
+  background-color: transparent !important;
+  background-image: none !important;
+  border-top-color: rgba(245, 189, 61, 0.075);
+}
+
+/* Apaga símbolos tipográficos antigos: flocos e estrelas soltas. */
+.sobre::after,
+.parceiros::after,
+.motivos::after,
+.cursos::after {
+  content: none !important;
+  display: none !important;
+  background-image: none !important;
+}
+
+/* Base comum para as ilustrações SVG laterais. */
+.sobre::before,
+.parceiros::before,
+.motivos::before,
+.cursos::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* SOBRE: árvore natalina com presentes integrados na base. */
+.sobre::before {
+  left: max(22px, calc((100% - 1500px) / 2));
+  top: 50%;
+  width: clamp(125px, 12vw, 175px);
+  height: clamp(245px, 24vw, 300px);
+  transform: translateY(-50%);
+  background-image: url("../imagens/Decoracoes/arvore-natal.svg");
+  opacity: 0.68;
+}
+
+/* PARCEIROS: presente como elemento de apoio, afastado da logo. */
+.parceiros::before {
+  left: max(22px, calc((100% - 1300px) / 2));
+  bottom: 12px;
+  width: clamp(170px, 19vw, 245px);
+  height: clamp(125px, 16vw, 190px);
+  background-image: url("../imagens/Decoracoes/presente-natal.svg");
+  opacity: 0.62;
+}
+
+/* MOTIVOS: ornamento discreto no espaço superior direito. */
+.motivos::before {
+  right: max(28px, calc((100% - 1250px) / 2));
+  top: 18px;
+  width: 70px;
+  height: 92px;
+  background-image: url("../imagens/Decoracoes/ornamento-natal.svg");
+  opacity: 0.45;
+}
+
+/* CURSOS: notebook natalino posicionado fora da área dos cards. */
+.cursos::before {
+  right: max(16px, calc((100% - 1220px) / 2));
+  top: 76px;
+  width: clamp(175px, 20vw, 245px);
+  height: 155px;
+  background-image: url("../imagens/Decoracoes/notebook-natal.svg");
+  opacity: 0.48;
+}
+
+/* Conteúdo de texto e listas permanecem acima das ilustrações. */
+.sobre-conteudo,
+.sobre-destaques,
+.parceiros-titulo,
+.lista-parceiros,
+.titulo-motivos,
+.lista-motivos,
+.titulo-cursos,
+.lista-cursos {
+  position: relative;
+  z-index: 1;
+}
+
+/* Em telas de tablet/laptop, remove ilustrações laterais para
+   que elas não fiquem atrás de títulos, parágrafos ou cards. */
+@media (max-width: 1120px) {
+  .sobre::before,
+  .parceiros::before,
+  .motivos::before,
+  .cursos::before {
+    content: none !important;
+    display: none !important;
+    background-image: none !important;
+  }
+
+  /* Mais estrelas e brilho no tablet, sem esticar o SVG desktop. */
+  main::before {
+    background-image: url("../imagens/Decoracoes/ceu-estrelado-natal-mobile.svg");
+    background-repeat: repeat-y;
+    background-position: center top;
+    background-size: 100% 950px;
+    opacity: 0.86;
+  }
+}
+
+/* Mobile: mantém somente o cenário estrelado; nenhum ornamento
+   individual entra na área dos textos ou dos cards. */
+@media (max-width: 700px) {
+  main::before {
+    background-image: url("../imagens/Decoracoes/ceu-estrelado-natal-mobile.svg");
+    background-repeat: repeat-y;
+    background-position: center top;
+    background-size: 100% 850px;
+    opacity: 0.9;
+  }
+
+  .sobre::before,
+  .sobre::after,
+  .parceiros::before,
+  .parceiros::after,
+  .motivos::before,
+  .motivos::after,
+  .cursos::before,
+  .cursos::after {
+    content: none !important;
+    display: none !important;
+    background-image: none !important;
+  }
+
+  .sobre,
+  .parceiros,
+  .motivos,
+  .cursos {
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+}
+
+@media (max-width: 380px) {
+  main::before {
+    background-size: 100% 780px;
+    opacity: 0.86;
+  }
+}
+
+
+/* =====================================================================
+   FLASHCLIP — POLIMENTO VISUAL FINAL
+   Complementa o CSS existente sem redefinir estilos de cards de cursos.
+   Carregue este arquivo DEPOIS do home.css atual.
+   ===================================================================== */
+
+:root {
+  --flashclip-gold: #f5bd3d;
+  --flashclip-gold-soft: rgba(245, 189, 61, 0.16);
+  --flashclip-green: #12382b;
+  --flashclip-line: rgba(245, 189, 61, 0.13);
+  --flashclip-muted: #a5abb0;
+}
+
+/* Seleção de texto combinando com a identidade visual. */
+::selection {
+  color: #090b0c;
+  background: rgba(245, 189, 61, 0.82);
+}
+
+/* Fundo contínuo: céu estrelado + luz ambiente suave. */
+main {
+  background-color: #030508;
+  isolation: isolate;
+}
+
+main::before {
+  z-index: 0;
+  background-image:
+    url("../imagens/Decoracoes/ceu-estrelado-natal.svg"),
+    radial-gradient(ellipse at 12% 18%, rgba(18, 75, 51, 0.20), transparent 34%),
+    radial-gradient(ellipse at 87% 45%, rgba(245, 189, 61, 0.075), transparent 30%);
+  background-repeat: repeat-y, no-repeat, no-repeat;
+  background-position: center top, left top, right center;
+  background-size: 100% 1100px, 100% 100%, 100% 100%;
+  opacity: 0.86;
+}
+
+main > section {
+  position: relative;
+  z-index: 1;
+}
+
+/* O Hero permanece com a sua ilustração; só acrescentamos acabamento. */
+.hero {
+  border-bottom: 1px solid rgba(245, 189, 61, 0.12);
+  background-color: #030508;
+}
+
+.categoria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  color: #e2d4aa;
+  text-shadow: 0 0 18px rgba(245, 189, 61, 0.12);
+}
+
+.categoria::before,
+.categoria::after {
+  content: "";
+  width: clamp(18px, 3vw, 38px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 189, 61, 0.85));
+}
+
+.categoria::after {
+  transform: rotate(180deg);
+}
+
+.botao-principal {
+  color: #15110a;
+  background: linear-gradient(135deg, #ffe09a 0%, #f5bd3d 58%, #e7a923 100%);
+  box-shadow: 0 8px 28px rgba(245, 189, 61, 0.13);
+}
+
+.botao-principal:hover {
+  background: linear-gradient(135deg, #ffe8b5 0%, #ffd45e 100%);
+  box-shadow: 0 10px 32px rgba(245, 189, 61, 0.22);
+}
+
+.botao-secundario {
+  border-color: rgba(245, 189, 61, 0.24);
+  background: rgba(8, 12, 13, 0.38);
+}
+
+/* Seções: mais profundidade, sem criar painéis pesados ou mexer nos cards. */
+.sobre,
+.parceiros,
+.motivos,
+.cursos {
+  border-top: 1px solid rgba(245, 189, 61, 0.085);
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.sobre {
+  padding-block: clamp(78px, 8vw, 112px);
+  background-image:
+    radial-gradient(ellipse at 17% 52%, rgba(13, 73, 48, 0.19), transparent 36%),
+    linear-gradient(180deg, rgba(2, 6, 7, 0.10), rgba(2, 6, 7, 0.20)) !important;
+}
+
+.parceiros {
+  padding-block: clamp(78px, 8vw, 112px);
+  background-image:
+    radial-gradient(ellipse at 80% 45%, rgba(245, 189, 61, 0.10), transparent 32%),
+    linear-gradient(180deg, rgba(2, 6, 7, 0.16), rgba(2, 6, 7, 0.06)) !important;
+}
+
+.motivos {
+  padding-block: clamp(78px, 8vw, 112px);
+  background-image:
+    radial-gradient(ellipse at 12% 55%, rgba(13, 73, 48, 0.15), transparent 30%),
+    radial-gradient(ellipse at 88% 18%, rgba(245, 189, 61, 0.06), transparent 28%) !important;
+}
+
+.cursos {
+  padding-block: clamp(72px, 7.5vw, 104px);
+  background-image:
+    radial-gradient(ellipse at 50% 5%, rgba(245, 189, 61, 0.075), transparent 40%),
+    linear-gradient(180deg, rgba(2, 6, 7, 0.08), rgba(2, 6, 7, 0.18)) !important;
+}
+
+/* Rótulos pequenos com traços dourados: unidade visual entre seções. */
+.sobre-categoria,
+.parceiros-titulo > span,
+.titulo-motivos > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--flashclip-gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  line-height: 1.5;
+  text-shadow: 0 0 18px rgba(245, 189, 61, 0.12);
+}
+
+.sobre-categoria::before,
+.sobre-categoria::after,
+.parceiros-titulo > span::before,
+.parceiros-titulo > span::after,
+.titulo-motivos > span::before,
+.titulo-motivos > span::after {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 1px;
+  flex: 0 0 22px;
+  background: linear-gradient(90deg, transparent, rgba(245, 189, 61, 0.78));
+}
+
+.sobre-categoria::after,
+.parceiros-titulo > span::after,
+.titulo-motivos > span::after {
+  transform: rotate(180deg);
+}
+
+/* Os títulos ficam mais consistentes, sem selecionar h3 dos cards. */
+.sobre h2,
+.parceiros-titulo h2,
+.titulo-motivos h2,
+.titulo-cursos h2 {
+  text-wrap: balance;
+  text-shadow: 0 8px 34px rgba(0, 0, 0, 0.34);
+}
+
+.sobre h2::after,
+.parceiros-titulo h2::after,
+.titulo-motivos h2::after,
+.titulo-cursos h2::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 2px;
+  margin: 18px auto 0;
+  border-radius: 99px;
+  background: linear-gradient(90deg, rgba(245, 189, 61, 0.15), #f5bd3d, rgba(245, 189, 61, 0.15));
+  box-shadow: 0 0 18px rgba(245, 189, 61, 0.15);
+}
+
+.sobre-descricao,
+.parceiros-titulo p,
+.titulo-motivos p,
+.titulo-cursos p {
+  color: #aeb4b8;
+  text-wrap: pretty;
+}
+
+.sobre-descricao {
+  line-height: 1.9;
+}
+
+.parceiros-titulo,
+.titulo-motivos,
+.titulo-cursos {
+  position: relative;
+}
+
+.parceiros-titulo {
+  margin-bottom: clamp(34px, 4vw, 54px);
+}
+
+.titulo-motivos {
+  margin-bottom: clamp(34px, 4vw, 54px);
+}
+
+.titulo-cursos {
+  margin-bottom: clamp(32px, 4vw, 44px);
+}
+
+.titulo-cursos::before {
+  content: "APRENDA • COMPARTILHE • EVOLUA";
+  display: block;
+  margin-bottom: 13px;
+  color: var(--flashclip-gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.23em;
+}
+
+/* Linhas divisórias discretas mantêm as seções conectadas. */
+.sobre + .parceiros,
+.parceiros + .motivos,
+.motivos + .cursos {
+  border-top-color: rgba(245, 189, 61, 0.12);
+}
+
+/* Abaixo de 1120px, deixa só o céu de fundo para liberar a área de leitura. */
+@media (max-width: 1120px) {
+  .sobre::before,
+  .parceiros::before,
+  .motivos::before,
+  .cursos::before {
+    content: none !important;
+    display: none !important;
+    background-image: none !important;
+  }
+
+  main::before {
+    background-image:
+      url("../imagens/Decoracoes/ceu-estrelado-natal.svg"),
+      radial-gradient(ellipse at 10% 20%, rgba(18, 75, 51, 0.15), transparent 38%),
+      radial-gradient(ellipse at 88% 60%, rgba(245, 189, 61, 0.06), transparent 32%);
+    background-repeat: repeat-y, no-repeat, no-repeat;
+    background-position: center top, left top, right center;
+    background-size: 100% 1000px, 100% 100%, 100% 100%;
+    opacity: 0.82;
+  }
+}
+
+@media (max-width: 700px) {
+  main::before {
+    background-image:
+      url("../imagens/Decoracoes/ceu-estrelado-natal-mobile.svg"),
+      radial-gradient(ellipse at 16% 16%, rgba(18, 75, 51, 0.12), transparent 40%),
+      radial-gradient(ellipse at 85% 70%, rgba(245, 189, 61, 0.055), transparent 36%);
+    background-repeat: repeat-y, no-repeat, no-repeat;
+    background-position: center top, left top, right center;
+    background-size: 100% auto, 100% 100%, 100% 100%;
+    opacity: 0.9;
+  }
+
+  .sobre,
+  .parceiros,
+  .motivos,
+  .cursos {
+    padding-block: 68px;
+  }
+
+  .sobre h2 {
+    font-size: clamp(34px, 8vw, 42px);
+    letter-spacing: -1.5px;
+  }
+
+  .parceiros-titulo h2,
+  .titulo-motivos h2 {
+    font-size: clamp(30px, 7vw, 42px);
+    letter-spacing: -1.2px;
+    line-height: 1.08;
+  }
+
+  .titulo-cursos h2 {
+    font-size: clamp(27px, 6.5vw, 34px);
+    letter-spacing: -0.8px;
+    line-height: 1.12;
+  }
+
+  .sobre-descricao,
+  .parceiros-titulo p,
+  .titulo-motivos p,
+  .titulo-cursos p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .titulo-cursos::before {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+  }
+}
+
+@media (max-width: 380px) {
+  .sobre,
+  .parceiros,
+  .motivos,
+  .cursos {
+    padding-block: 58px;
+  }
+
+  .sobre-categoria,
+  .parceiros-titulo > span,
+  .titulo-motivos > span {
+    gap: 8px;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+
+  .sobre-categoria::before,
+  .sobre-categoria::after,
+  .parceiros-titulo > span::before,
+  .parceiros-titulo > span::after,
+  .titulo-motivos > span::before,
+  .titulo-motivos > span::after {
+    width: 15px;
+    flex-basis: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Texto das informações do evento */
+.informacoes-evento span {
+  color: #f9f9f9;
+  font-size: 12px;
+  letter-spacing: 2px;
+
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85);
+}
+
+.informacoes-evento strong {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85);
+}
+
+/* Proteção discreta apenas em telas pequenas */
+@media (max-width: 600px) {
+  .informacoes-evento {
+    padding: 7px 10px;
+
+    background: rgba(3, 5, 8, 0.2);
+    border-radius: 6px;
+
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+  }
+
+  .informacoes-evento span {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .informacoes-evento strong {
+    font-size: 13px;
+  }
+}

@@ -28,6 +28,12 @@
 .fc-globe-view[data-renderer="webgl"] .fc-globe-fallback { display: none; }
 .fc-globe-view[data-renderer="webgl"] .fc-globe-loader { display: none; }
 .fc-globe-view[data-renderer="fallback"] .fc-globe-loader { bottom: 0; }
+/* Na volta para a home, a foto do globo fica no lugar enquanto a cena 3D monta. */
+.fc-globo-foto .fc-globe-view[data-renderer="loading"] :is(.fc-globe-fallback, .fc-globe-loader) { visibility: hidden; }
+.fc-globo-foto .fc-globe-canvas::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: var(--fc-globo-foto) center / contain no-repeat; opacity: 0; visibility: hidden; }
+.fc-globo-foto .fc-globe-view[data-renderer="loading"] .fc-globe-canvas::after { opacity: 1; visibility: visible; }
+/* Foto do mesmo tamanho de tela: some aos poucos. De outro tamanho (celular girado), troca direto, sem dois globos. */
+.fc-globo-foto-exata .fc-globe-view:not([data-renderer="loading"]) .fc-globe-canvas::after { transition: opacity .3s ease, visibility 0s .3s; }
 .fc-globe-loader { position: absolute; left: 10%; right: 10%; bottom: 35%; z-index: 3; text-align: center; color: #f2f2f2; font-size: 12px; }
 .fc-globe-orbit { position: absolute; width: 76%; height: 17%; border: 1px solid #f5bd3d25; border-radius: 50%; bottom: 6%; left: 12%; pointer-events: none; transform: rotate(-8deg); }
 .fc-globe-hint { color: #aeb4b8; text-align: center; font-size: 10px; letter-spacing: .02em; padding: 0 12px; margin: -2px 0 16px; }

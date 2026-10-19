@@ -39,7 +39,10 @@ html.fc-loading body>:not(#fc-loading):not(script):not(style):not(noscript){visi
   const root=document.documentElement;
   // A tela de carregamento aparece só na primeira visita; ao voltar para a home, a página abre direto.
   let loadedBefore=false;try{loadedBefore=sessionStorage.getItem('flashclip-carregado-v1')==='1';}catch{}
-  if(loadedBefore){root.classList.add('fc-loaded-before');root.dataset.loadState='ready';}
+  if(loadedBefore){root.classList.add('fc-loaded-before');root.dataset.loadState='ready';
+    // Enquanto o globo 3D monta de novo, aparece a última foto dele (guardada pelo js/globo.js), e não o desenho reserva.
+    try{const foto=sessionStorage.getItem('flashclip-globo-foto-v1');if(foto&&foto.startsWith('data:image/')){root.style.setProperty('--fc-globo-foto',`url("${foto}")`);root.classList.add('fc-globo-foto');
+      if(sessionStorage.getItem('flashclip-globo-foto-janela-v1')===`${innerWidth}x${innerHeight}`)root.classList.add('fc-globo-foto-exata');}}catch{}}
   else{root.classList.add('fc-loading');root.dataset.loadState='loading';}
   const boot=window.FlashClipBoot={states:{},error:false,revealed:loadedBefore,bypassed:false,timer:0,
     report(name,status='ready') {this.states[name]=status;window.dispatchEvent(new CustomEvent('fc:load-state'));},
@@ -75,12 +78,12 @@ html.fc-loading body>:not(#fc-loading):not(script):not(style):not(noscript){visi
       <meta name="theme-color" content="#030508">
     <link rel="stylesheet" href="css/natal.css?v=pedro-3">
     <link rel="stylesheet" href="./notebooks/course-computers.css?v=natal-3d-1">
-    <link rel="stylesheet" href="css/globo.css?v=pedro-2">
+    <link rel="stylesheet" href="css/globo.css?v=volta-1">
     <link rel="stylesheet" href="css/entrada.css?v=pedro-3">
     <link rel="stylesheet" href="css/experiencia.css?v=2">
     <script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.min.js","three/addons/":"./vendor/three/examples/jsm/"}}</script>
     <script defer src="./notebooks/course-computers-loader.js?v=natal-3d-1"></script>
-    <script type="module" src="js/globo.js?v=pedro-2"></script>
+    <script type="module" src="js/globo.js?v=volta-1"></script>
   </head>
 
   <body class="natal-theme" data-lights="on">

@@ -114,7 +114,8 @@ async function initGlobe() {
   const shadow = new THREE.Mesh(new THREE.PlaneGeometry(12,12),new THREE.ShadowMaterial({opacity:.24}));
   shadow.rotation.x=-Math.PI/2; shadow.position.y=-.02; shadow.receiveShadow=true; scene.add(shadow);
 
-  let frame=0, previous=0, visible=true, disposed=false, paused=document.body.classList.contains('fc-paused');
+  // live: só desenha depois de a cena ficar pronta (antes disso o trenó aparecia parado ao lado do globo).
+  let frame=0, previous=0, visible=true, disposed=false, live=false, paused=document.body.classList.contains('fc-paused');
   let targetYaw=-.16, targetPitch=0, yaw=targetYaw, pitch=0, kick=0, kickTime=0, activity=0;
   let drag=null, currentLight=true, accumulator=0, lastSnowReport='';
   let scrollDepth=0, dolly=8.4, scrolling=false, scrollTimer=0;
@@ -130,7 +131,7 @@ async function initGlobe() {
     if(canMove()){snow.shake(.6);kick=.04+e.detail.count*.012;kickTime=0;}
     schedule();
   });
-  window.addEventListener('fc:entry-reset',()=>{opening.reset();targetYaw=homeYaw;targetPitch=0;yaw=homeYaw;pitch=0;kick=0;previous=0;resize();schedule();});
+  window.addEventListener('fc:entry-reset',()=>{opening.reset();targetYaw=homeYaw;targetPitch=0;yaw=homeYaw;pitch=0;kick=0;previous=0;resize();schedule();photoSoon();});
   window.addEventListener('fc:entry-land',e=>{opening.land(e.detail.duration);targetYaw=homeYaw;targetPitch=0;kick=0;scrollDepth=0;visible=true;resize();schedule();});
   if(document.body.classList.contains('fc-entry-active'))startEntry();
   function report(text) { if(status.textContent!==text) status.textContent=text; }
@@ -140,8 +141,57 @@ async function initGlobe() {
     view.dataset.snow=String(snow.active); view.dataset.motion=paused?'paused':reduced.matches?'reduced':'active';
   }
   function schedule() {
-    if(frame||disposed||document.hidden||!visible||scrolling) return;
+    if(!live||frame||disposed||document.hidden||!visible||scrolling) return;
     frame=requestAnimationFrame(render);
+  }
+  // Foto do globo na pose inicial, guardada na sessão: ao voltar para a home, o index.html a mostra
+  // enquanto a cena 3D monta de novo. Tirada uma vez por tamanho, quando o globo está na home.
+  const photoKey='flashclip-globo-foto-v1', photoSizeKey='flashclip-globo-foto-tamanho-v1', photoWindowKey='flashclip-globo-foto-janela-v1';
+  let photoTimer=0;
+  function photoSize() { return `${Math.round(lastWidth)}x${Math.round(lastHeight)}`; }
+  function canPhoto() {
+    return live&&!disposed&&currentLight&&root.parentElement===dock&&!dialog.open&&!opening.active&&!opening.playing
+      &&!document.body.classList.contains('fc-entry-active')&&!document.body.classList.contains('fc-entry-landing');
+  }
+  function hasPhoto() {
+    try {return sessionStorage.getItem(photoSizeKey)===photoSize()&&!!sessionStorage.getItem(photoKey);} catch {return true;}
+  }
+  function storePhoto(url,size,screen) {
+    if(typeof url!=='string'||!url.startsWith('data:image/'))return;
+    try {sessionStorage.setItem(photoKey,url);sessionStorage.setItem(photoSizeKey,size);sessionStorage.setItem(photoWindowKey,screen);}
+    catch {try {[photoKey,photoSizeKey,photoWindowKey].forEach(key=>sessionStorage.removeItem(key));} catch {}}
+  }
+  function takePhoto(now=false) {
+    clearTimeout(photoTimer);photoTimer=0;
+    if(!canPhoto())return;
+    syncRendererSize();
+    if(!lastWidth||!lastHeight||hasPhoto())return;
+    // O tamanho vale o da hora da foto: a tela pode girar enquanto a imagem é codificada.
+    // 720 px bastam para os segundos em que ela aparece e deixam o PNG do Safari leve.
+    const size=photoSize(), screen=`${innerWidth}x${innerHeight}`;
+    const source=renderer.domElement, scale=Math.min(1,720/Math.max(source.width,source.height));
+    const shot=document.createElement('canvas');
+    shot.width=Math.max(1,Math.round(source.width*scale));shot.height=Math.max(1,Math.round(source.height*scale));
+    const rotation=pivot.rotation.clone(), x=pivot.position.x, eye=camera.position.clone();
+    pivot.rotation.set(0,homeYaw,0);pivot.position.x=0;
+    camera.position.set(0,3.05,Math.max(8.4,fitDistance()));camera.lookAt(0,1.9,0);
+    renderer.shadowMap.needsUpdate=true;renderer.render(scene,camera);
+    shot.getContext('2d').drawImage(source,0,0,shot.width,shot.height);
+    // Ao sair da página não há tempo para a versão assíncrona, nem tela para restaurar.
+    if(now){storePhoto(shot.toDataURL('image/webp',.82),size,screen);return;}
+    // Volta ao quadro atual na mesma tarefa: a pose da foto nunca chega à tela.
+    pivot.rotation.copy(rotation);pivot.position.x=x;camera.position.copy(eye);camera.lookAt(0,1.9,0);
+    renderer.shadowMap.needsUpdate=true;renderer.render(scene,camera);
+    shot.toBlob(blob=>{
+      if(!blob)return;
+      const reader=new FileReader();reader.onload=()=>storePhoto(reader.result,size,screen);reader.readAsDataURL(blob);
+    },'image/webp',.82);
+  }
+  function photoSoon() {
+    if(!live||photoTimer)return;
+    photoTimer=setTimeout(()=>{
+      if('requestIdleCallback' in window)requestIdleCallback(()=>takePhoto(),{timeout:1500});else takePhoto();
+    },600);
   }
   let lastWidth=0,lastHeight=0;
   function resize() { sizeDirty=true; schedule(); }
@@ -187,6 +237,7 @@ async function initGlobe() {
     if(!canMove()) {yaw=targetYaw;pitch=targetPitch;}
     report('Globo na posição inicial.'); schedule();
   }
+  function fitDistance() { return 4.35/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*camera.aspect); }
   function render(now,initial=false) {
     frame=0;
     if(disposed||(!initial&&(document.hidden||!visible||scrolling))) {previous=0;return;}
@@ -212,8 +263,7 @@ async function initGlobe() {
     pivot.position.x=Math.sin(kickTime*23)*kick*.2;
     const desiredDistance=opening.active?7.8:dialog.open?7.6:8.4-scrollDepth*.38;
     if(canMove()){dolly+=(desiredDistance-dolly)*(1-Math.exp(-5*dt));needsMore ||= Math.abs(desiredDistance-dolly)>.0001;}else dolly=desiredDistance;
-    const fitWidth=4.35/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*camera.aspect);
-    const distance=Math.max(dolly,fitWidth);
+    const distance=Math.max(dolly,fitDistance());
     camera.position.set(0,3.05+scrollDepth*.3,distance); camera.lookAt(0,1.9,0);
     const rotation=pivot.rotation;
     if(opening.playing||rotation.x!==shadowPitch||rotation.y!==shadowYaw||rotation.z!==shadowRoll||pivot.position.x!==shadowX) {
@@ -223,7 +273,7 @@ async function initGlobe() {
     renderer.render(scene,camera); syncData();
     if(needsMore) schedule(); else previous=0;
   }
-  const ro=new ResizeObserver(resize);ro.observe(view);
+  const ro=new ResizeObserver(()=>{resize();photoSoon();});ro.observe(view);
   const io=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible){previous=0;schedule();}else{cancelAnimationFrame(frame);frame=0;previous=0;}},{threshold:0});io.observe(view);
   const mo=new MutationObserver(()=>{
     const nextPaused=document.body.classList.contains('fc-paused');
@@ -307,7 +357,7 @@ async function initGlobe() {
   });
   renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();cancelAnimationFrame(frame);frame=0;disposed=true;fallback('WebGL context lost');});
   window.addEventListener('fc:load-bypass',()=>{disposed=true;cancelAnimationFrame(frame);frame=0;renderer.dispose();renderer.domElement.remove();});
-  window.addEventListener('pagehide',()=>{cancelAnimationFrame(frame);frame=0;previous=0;});
+  window.addEventListener('pagehide',()=>{takePhoto(true);cancelAnimationFrame(frame);frame=0;previous=0;});
   window.addEventListener('pageshow',()=>{previous=0;schedule();});
   await opening.ready;
   if(cancelled())return;
@@ -322,7 +372,8 @@ async function initGlobe() {
   view.dataset.renderer='webgl';view.dataset.asset='Higgsfield 3D Jutsu';
   expandButton.disabled=false;
   snow.scatter();applyLight();resize();
-  cancelAnimationFrame(frame);frame=0;render(performance.now(),true);
+  live=true;cancelAnimationFrame(frame);frame=0;render(performance.now(),true);
+  photoSoon();
   window.dispatchEvent(new CustomEvent('fc:globe-ready'));
   window.FlashClipBoot?.report('scene');
   if(reduced.matches)report('Movimento reduzido: use as setas para explorar em passos.');

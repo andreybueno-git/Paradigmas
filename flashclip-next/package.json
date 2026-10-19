@@ -3,9 +3,13 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
+    "estilos": "node scripts/gerar-estilos.mjs",
+    "predev": "node scripts/gerar-estilos.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/gerar-estilos.mjs",
     "build": "next build",
-    "start": "serve out"
+    "start": "serve out",
+    "checar": "esbuild --log-level=warning --loader:.js=jsx --format=esm --outdir=/tmp/fc-checar"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
@@ -13,5 +17,11 @@
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12",
+    "postcss": "^8.5.31",
+    "postcss-selector-parser": "^7.1.6",
+    "postcss-value-parser": "^4.2.0"
   }
 }

@@ -9,11 +9,12 @@
 const PREFS = 'fc-audio-prefs';
 const SESSION = 'fc-audio-session';
 
-let motor = null;
-
+// Guardado em window para sobreviver ao recarregamento de módulos do `next dev` (HMR):
+// dois motores tocariam duas trilhas e dobrariam os efeitos.
 export function obterMotorAudio() {
-  if (!motor && typeof window !== 'undefined') motor = criarMotor();
-  return motor;
+  if (typeof window === 'undefined') return null;
+  if (!window.__flashclipMotorAudio) window.__flashclipMotorAudio = criarMotor();
+  return window.__flashclipMotorAudio;
 }
 
 function criarMotor() {
@@ -24,8 +25,6 @@ function criarMotor() {
   // A trilha segue o relógio da sessão: ao recarregar, continua do ponto em que estaria.
   if (!session.epoch) { session.epoch = Date.now() / 1000; write('sessionStorage', SESSION, session); }
 
-  // Na home, o primeiro som espera o toque no globo (a página liga isso com definirPortao).
-  let gated = false;
   let context, musicBus, musicOutput, effectsBus, master, timer = 0, unlocked = false, unavailable = false;
   let music = prefs.music !== false, effects = prefs.effects !== false, step = 0, nextNote = 0, revision = 0, effectsRevision = 0;
   let lifecycle = Promise.resolve(), pageInactive = false, startedSilent = false, pressStarted = false, pressTarget = null, buttonUnlockTried = false, pendingEffect = null;
@@ -113,7 +112,8 @@ function criarMotor() {
     if (!context || !music || !wantsRunning() || context.state !== 'running') return;
     // Se a thread ficou bloqueada, não despeje todas as notas perdidas de uma vez.
     if (nextNote < context.currentTime - subdivision) nextNote = context.currentTime + .03;
-    while (nextNote < context.currentTime + .3) {
+    // Agenda um segundo à frente: o globo 3D começando a desenhar na home não abre buracos na trilha.
+    while (nextNote < context.currentTime + 1) {
       const index = step % melody.length, note = melody[index];
       if (note !== null) bell(note, nextNote, step % 4 === 0 ? .24 : .17);
       if (step % 16 === 0) for (const midi of chords[Math.floor(index / 16)]) tone(hz(midi), nextNote, beat * 5, .09, musicBus, 'triangle');
@@ -170,8 +170,9 @@ function criarMotor() {
     // Leitores de tela disparam só o clique, sem toque nem tecla antes.
     else if (event.type === 'click') { if (!pressStarted || control !== pressTarget) startedSilent = !audible(); pressStarted = false; }
     if (!activating(event) || audible()) return;
-    // Na home, antes do primeiro som, só o globo e os controles de áudio ligam a trilha. Depois disso,
-    // e nas outras telas, qualquer toque inicia ou retoma o que o iOS suspendeu.
+    // Na home (a única tela com o globo), antes do primeiro som, só o globo e os controles de áudio
+    // ligam a trilha. Depois disso, e nas outras telas, qualquer toque inicia ou retoma o som.
+    const gated = !!document.getElementById('globo');
     if (!unlocked && gated && !event.target.closest?.('#globo,[data-entry-tap],[data-explore-globe],[data-replay-entry],[data-audio-music],[data-audio-effects]')) return;
     // Repete a cada gesto até o som sair: um toque recusado não encerra as tentativas.
     wake();
@@ -246,8 +247,6 @@ function criarMotor() {
     estado() { return instantaneo; },
     alternarMusica: toggleMusic,
     alternarEfeitos: toggleEffects,
-    // A home liga o portão ao montar e desliga ao sair: lá o primeiro som vem do globo.
-    definirPortao(valor) { gated = !!valor; },
   };
 }
 

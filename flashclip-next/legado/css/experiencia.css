@@ -1,7 +1,5 @@
-/* FlashClip · botões no desenho da home e botões magnéticos.
-   Arquivo escopado: cada página importa por último, como o experiencia.css do site original,
-   para vencer o CSS do cabeçalho e dos formulários. A barra de áudio e a transição ficam em
-   src/estilos/global/experiencia.css. */
+/* FlashClip · camada compartilhada por todas as telas: botões da home, botões magnéticos,
+   troca direta entre páginas e controles de música. */
 :root {
   --fc-ink: #030508;
   --fc-paper: #f2f2f2;
@@ -42,6 +40,22 @@
   0% { box-shadow: 0 0 0 0 #f5bd3dcc, 0 10px 30px -8px #f5bd3d70; scale: .96; }
   35% { scale: 1.02; }
   100% { box-shadow: 0 0 0 16px #f5bd3d00, 0 10px 30px -8px #f5bd3d00; scale: 1; }
+}
+
+/* Troca de tela direta (Chrome, Edge e Safari 18.2+): o navegador mantém a tela atual até a
+   próxima estar pronta e troca de uma vez, sem animação e sem a tela preta no meio. */
+@view-transition { navigation: auto; }
+::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none; }
+
+/* Controles de música e efeitos, presentes em todas as telas. */
+.fc-audio-dock { position: fixed; z-index: 50; right: 14px; bottom: 12px; display: flex; gap: 14px; padding: 8px 15px; background: #080d11f0; border: 1px solid #f5bd3d36; border-radius: 25px; backdrop-filter: blur(10px); }
+.fc-audio-dock button { background: none; border: 0; color: #c9cdd1; font: 10px 'Avenir Next', Arial, sans-serif; cursor: pointer; padding: 5px 0; }
+.fc-audio-dock button:hover { color: var(--fc-gold); }
+body.fc-entry-active .fc-audio-dock { display: none; }
+@media (max-width: 700px) { .fc-audio-dock { right: 10px; bottom: 8px; } }
+@media (max-width: 700px), (hover: none) and (pointer: coarse) {
+  .fc-audio-dock { max-width: calc(100vw - 20px); flex-wrap: wrap; gap: 0 4px; padding: 2px 6px; }
+  .fc-audio-dock button { min-width: 44px; min-height: 44px; padding: 8px; font-size: 11px; line-height: 1.35; }
 }
 
 @media (prefers-reduced-motion: reduce) {

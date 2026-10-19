@@ -3,3 +3,5 @@ node_modules/
 out/
 *.tsbuildinfo
 next-env.d.ts
+# gerado por scripts/gerar-estilos.mjs
+src/estilos/paginas/

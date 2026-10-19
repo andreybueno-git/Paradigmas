@@ -1,4 +1,0 @@
-/* Base global: o <body> real fica escuro e sem margem; cada página desenha o seu fundo
-   no próprio contêiner (data-estilos), que faz o papel do body do site original. */
-html, body { margin: 0; padding: 0; background: #030508; }
-[data-estilos] { min-height: 100vh; }

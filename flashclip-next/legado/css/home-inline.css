@@ -1,0 +1,28 @@
+/* Estilo crítico que o index.html original tinha embutido no <head> (tela de carregamento).
+   O "filhos do body" virou "filhos do contêiner da home", porque a home agora vive dentro dele. */
+html.fc-loading body{overflow:hidden!important}
+html.fc-loaded-before #fc-loading{display:none!important}
+html.fc-loading [data-fc-page~="home"]>:not(#fc-loading){visibility:hidden!important}
+#fc-loading{position:fixed;inset:0;z-index:30000;display:grid;place-items:center;padding:28px;background:radial-gradient(ellipse at 50% 42%,#124b3388,transparent 64%),#030508;color:#f2f2f2;text-align:center;overflow:auto;transition:opacity .4s ease;font-family:'Avenir Next','Trebuchet MS',Arial,sans-serif}
+#fc-loading[hidden]{display:none!important}
+#fc-loading.fc-loading-leaving{opacity:0;pointer-events:none}
+.fc-loading-content{width:min(390px,100%)}
+.fc-loading-logo{width:146px;height:auto;display:block;margin:0 auto 35px}
+.fc-loading-orb{position:relative;width:126px;height:126px;margin:0 auto 25px;border:1px solid #f5bd3d44;border-radius:50%;background:radial-gradient(circle at 30% 22%,#f5bd3d22,transparent 55%);box-shadow:inset 0 0 30px #f5bd3d09,0 0 60px #f5bd3d09;display:grid;place-items:center}
+.fc-loading-orb::before{content:'';position:absolute;inset:-7px;border:1px solid transparent;border-top-color:#f5bd3d;border-right-color:#f5bd3d55;border-radius:50%;animation:fc-load-orbit 2.2s linear infinite}
+.fc-loading-orb svg{width:65px;height:80px;overflow:visible}
+.fc-loading-flake{animation:fc-load-flake 2.5s ease-in-out infinite alternate;transform-origin:center}
+.fc-loading-flake:nth-of-type(2){animation-delay:-1.1s}.fc-loading-flake:nth-of-type(3){animation-delay:-1.8s}
+#fc-loading h1{font:400 clamp(27px,5vw,34px)/1.15 Georgia,'Times New Roman',serif;letter-spacing:-.035em;margin:0 0 13px;color:#f2f2f2}
+.fc-loading-message{font-size:12px;line-height:1.8;color:#aeb4b8;margin:0 auto;min-height:44px;max-width:340px}
+.fc-loading-steps{display:flex;justify-content:center;gap:24px;padding:0;margin:25px 0 0;list-style:none;font-size:10px;letter-spacing:.06em;color:#858d95}
+.fc-loading-steps li::before{content:'';display:block;width:5px;height:5px;border:1px solid #858d9566;border-radius:50%;margin:0 auto 9px}
+.fc-loading-steps li[data-ready="true"]{color:#f5bd3d}.fc-loading-steps li[data-ready="true"]::before{background:#f5bd3d;border-color:#f5bd3d;box-shadow:0 0 10px #f5bd3d55}
+.fc-loading-note{margin:24px 0 0;font-size:10px;line-height:1.7;color:#858d95}
+.fc-loading-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px}.fc-loading-actions[hidden]{display:none}
+.fc-loading-actions button{font:600 12px 'Avenir Next',Arial,sans-serif;min-height:44px;padding:12px 19px;border:1px solid #f5bd3d55;background:transparent;border-radius:25px;color:#f5bd3d;cursor:pointer}.fc-loading-actions button:first-child{background:#f5bd3d;color:#030508;border-color:#f5bd3d}
+#fc-loading button:focus-visible{outline:2px solid #f5bd3d;outline-offset:5px}
+#fc-loading[data-state="error"] .fc-loading-orb::before{animation:none;border-color:#f5bd3d55}
+.fc-globe-view[data-renderer="fallback"] .fc-globe-canvas{display:none}
+@keyframes fc-load-orbit{to{transform:rotate(360deg)}}@keyframes fc-load-flake{from{transform:translateY(-4px);opacity:.4}to{transform:translateY(5px);opacity:1}}
+@media(prefers-reduced-motion:reduce){#fc-loading,#fc-loading *{animation:none!important;transition:none!important}}

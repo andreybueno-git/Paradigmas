@@ -97,3 +97,34 @@ no cliente: o layout não desmonta, então a música continua entre as telas sem
 - Não edite `src/estilos/paginas/` (é gerado): mude `legado/css/` e rode `npm run estilos`.
 - Checagem rápida de sintaxe sem compilar o site: `npm run -s checar -- <arquivos>` (esbuild).
 - Comentários e nomes em português, no estilo do código existente.
+
+## Diferenças em relação ao site original
+Encontradas na comparação (prints em 1280 e 390 px, estilos computados e comportamentos, com o Supabase
+simulado). O resto ficou igual.
+
+Intencionais ou inevitáveis:
+- A página não recarrega ao navegar (é o que mantém a música). Um link para a própria página só volta ao
+  topo, em vez de recarregar. Voltar/Avançar restauram a rolagem; no teste isso levou ~2 s.
+- O Next pré-carrega as rotas dos links visíveis depois que a página abre (mais requisições em segundo
+  plano e um aviso "preloaded but not used" no console da home).
+- Inscrições: o "Carregando suas inscrições..." fica visível durante a consulta (o original deixava a
+  área vazia), e o redirecionamento de quem não está logado para o login usa `replace`.
+- O estado do usuário também é carregado nas telas de conta (uma consulta a mais em `usuarios`).
+- Admin: textos vindos do banco aparecem como texto (o original injetava HTML), o curso escolhido
+  continua selecionado depois de "Atualizar dados", e respostas atrasadas de um curso anterior não
+  sobrescrevem o atual.
+- Celular: sem a moldura, a barra de endereço recolhe ao rolar, e `100vh`, `svh` e `dvh` deixam de ser
+  iguais (12 regras de CSS usam essas unidades).
+- A página 404 é a padrão do Next (em inglês).
+
+## O que ainda não foi testado
+- Supabase de verdade: todas as consultas foram simuladas. Falta testar cadastro, login, matrícula,
+  o link de confirmação de e-mail (`#access_token`) e as regras de acesso (RLS).
+- Aparelhos de verdade: iPhone (Safari) e Android (Chrome), inclusive a música e a altura da tela.
+- Firefox e Safari no computador, e placas de vídeo reais (os testes usaram renderização por software).
+
+## Publicação
+- `NEXT_PUBLIC_BASE_PATH=/Paradigmas npm run build` e publicar o conteúdo de `out/` (com um arquivo
+  `.nojekyll`, porque o GitHub Pages ignora a pasta `_next` sem ele).
+- Os endereços antigos (`/FlashClip/html/cursos.html` etc.) não redirecionam para os novos.
+- No Supabase, atualizar a "Site URL" e as URLs de redirecionamento para o endereço novo.

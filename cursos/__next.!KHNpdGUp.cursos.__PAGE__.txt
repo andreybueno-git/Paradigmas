@@ -1,0 +1,51 @@
+1:"$Sreact.fragment"
+2:"/Paradigmas/_next/static/chunks/0umf92h1sb77c.js"
+3:I[39756,["$2"],"default"]
+4:I[37457,["$2"],"default"]
+9:"/Paradigmas/_next/static/chunks/252-hego4infb.js"
+a:"/Paradigmas/_next/static/chunks/3ds9ridjd0fmb.js"
+b:I[8997,["$9","$a"],"default"]
+c:I[75342,["$9","$a"],"default"]
+d:I[75133,["$9","$a"],"ControleAudio"]
+e:I[17989,["$9","$a"],"default"]
+13:"/Paradigmas/_next/static/chunks/0eqrf_hslh84f.js"
+14:"/Paradigmas/_next/static/chunks/3dlolswjw273-.js"
+15:I[24697,["$9","$a","$13","$14"],"default"]
+16:I[16236,["$9","$a","$13","$14"],"default"]
+17:I[66631,["$9","$a","$13","$14"],"UsuarioDesktop"]
+18:I[96154,["$9","$a","$13","$14"],"default"]
+19:I[20609,["$9","$a","$13","$14"],"default"]
+22:"ViewportBoundary"
+23:I[97367,["$2"],"$22"]
+24:"MetadataBoundary"
+25:I[97367,["$2"],"$24"]
+26:"$Sreact.suspense"
+:HL["/Paradigmas/_next/static/chunks/3-52tupj1i7rg.css","style"]
+:HL["/Paradigmas/imagens/logoFlash.webp","image"]
+6:X
+6:C
+7:X
+12:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"data-fc-page":"cursos","style":{"display":"contents"},"children":[["$","header",null,{"className":"navbar","children":[["$","$L15",null,{}],["$","$L16",null,{"href":"/","className":"logo","children":["$","img",null,{"src":"/Paradigmas/imagens/logoFlash.webp","alt":"FlashClip"}]}],["$","nav",null,{"className":"nav-links","children":[["$","$L16","home",{"href":"/","children":"Home"}],["$","$L16","cursos",{"href":"/cursos/","className":"ativo","children":"Cursos"}],["$","$L16","programacao",{"href":"/programacao/","children":"Programação"}],["$","$L16","instrutores",{"href":"/instrutores/","children":"Instrutores"}],["$","$L16","patrocinadores",{"href":"/patrocinadores/","children":"Patrocinadores"}],["$","$L16","contato",{"href":"/contato/","children":"Contato"}],["$","$L16","sobre",{"href":"/sobre/","children":"Sobre"}],["$","$L16","faq",{"href":"/faq/","children":"FAQ"}]]}],["$","div",null,{"className":"nav-acoes","children":[["$","$L17",null,{}],["$","$L16",null,{"href":"/inscricoes/","className":"inscricoes fc-magnetic","children":"Inscrições"}]]}],["$","$L18",null,{"pagina":"cursos"}]]}],["$","main",null,{"children":[["$","section",null,{"className":"cursos-intro","children":[["$","h1",null,{"children":"Cursos"}],["$","p",null,{"children":"Escolha um curso, aprenda algo novo e participe do FlashClip."}]]}],["$","section",null,{"className":"cursos","children":[["$","div",null,{"className":"titulo-cursos","children":[["$","div",null,{"children":[["$","span",null,{"children":" PROGRAMAÇÃO "}],["$","h2",null,{"children":"Cursos disponíveis"}]]}],["$","p",null,{"children":"Confira os cursos disponíveis para inscrição no evento."}]]}],["$","$L19",null,{"variante":"cursos"}]]}],["$","section",null,{"className":"informacoes-cursos","children":[["$","div",null,{"className":"informacoes-titulo","children":[["$","span",null,{"children":" ANTES DE SE INSCREVER "}],["$","h2",null,{"children":"Como funcionam os cursos?"}],["$","p",null,{"children":"O FlashClip foi pensado para oferecer uma experiência rápida, prática e acessível para estudantes."}]]}],"$L1a"]}],"$L1b"]}],"$L1c"]}],["$L1d","$L1e","$L1f"],"$L20"]}],"p":"$@21","v":null,"s":"$7"}}]]
+10:[["children",{"s":"cursos","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}]}]]}],"p":"$@11","v":"$6","s":"$7"},"c":"$Q12"}]]
+8:[["children",{"s":"(site)","h":112,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Paradigmas/_next/static/chunks/3-52tupj1i7rg.css","precedence":"next"}],["$","script","script-0",{"src":"/Paradigmas/_next/static/chunks/252-hego4infb.js","async":true}],["$","script","script-1",{"src":"/Paradigmas/_next/static/chunks/3ds9ridjd0fmb.js","async":true}]],["$","html",null,{"lang":"pt-BR","data-scroll-behavior":"smooth","suppressHydrationWarning":true,"children":["$","body",null,{"children":[["$","$Lb",null,{}],["$","$Lc",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$0:t:t:d:r:props:children:1:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$0:t:t:d:r:props:children:1:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],[]]}]}],["$","$Ld",null,{}],["$","$Le",null,{}]]}]}]]}],"p":"$@f","v":null,"s":"$7"},"c":"$Q10"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}]]}],"p":"$@5","v":"$6","s":"$7"},"c":"$Q8"},"h":{"r":["$","$1","h",{"children":[null,["$","$L23",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#030508"}]]}],["$","$L25",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$26",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Cursos | FlashClip"}]]}]}],null]}],null]}],"p":"$@27","v":null,"s":"$7"}},"a":"$@28","u":"$@29","b":"H_ACkgdqyfVgIwa-L3dcy"}
+2a:I[22016,["$9","$a","$13","$14"],""]
+2b:I[97367,["$2"],"OutletBoundary"]
+:HL["/Paradigmas/_next/static/chunks/3_fgzjlwj6t5r.css","style"]
+1a:["$","div",null,{"className":"lista-informacoes","children":[["$","article","01",{"className":"info-card","children":[["$","div",null,{"className":"info-numero","children":"01"}],["$","div",null,{"children":[["$","h3",null,{"children":"Escolha seu curso"}],["$","p",null,{"children":"Confira a descrição, o período e as vagas disponíveis antes de realizar sua inscrição."}]]}]]}],["$","article","02",{"className":"info-card","children":[["$","div",null,{"className":"info-numero","children":"02"}],["$","div",null,{"children":[["$","h3",null,{"children":"Faça sua inscrição"}],["$","p",null,{"children":"Escolha o curso desejado e confirme sua inscrição através da plataforma."}]]}]]}],["$","article","03",{"className":"info-card","children":[["$","div",null,{"className":"info-numero","children":"03"}],["$","div",null,{"children":[["$","h3",null,{"children":"Participe do evento"}],["$","p",null,{"children":"Compareça ao evento no horário indicado e aproveite a experiência de aprendizado."}]]}]]}],["$","article","04",{"className":"info-card","children":[["$","div",null,{"className":"info-numero","children":"04"}],["$","div",null,{"children":[["$","h3",null,{"children":"Receba seu certificado"}],["$","p",null,{"children":"Após a participação, você receberá seu certificado digital."}]]}]]}]]}]
+1b:["$","section",null,{"className":"cta","children":[["$","span",null,{"children":" FLASHCLIP "}],["$","h2",null,{"children":"Ainda está em dúvida?"}],["$","p",null,{"children":"Confira as perguntas frequentes ou entre em contato com nossa equipe."}],["$","div",null,{"className":"cta-botoes","children":[["$","$L2a",null,{"href":"/faq/","className":"botao-secundario","children":"Ver perguntas frequentes"}],["$","$L2a",null,{"href":"/contato/","className":"botao-principal","children":"Entre em contato"}]]}]]}]
+1c:["$","footer",null,{"children":["$","div",null,{"className":"footer-conteudo","children":[["$","p",null,{"children":"© 2026/2 FlashClip. Todos os direitos reservados."}],["$","div",null,{"className":"contatos","children":[["$","a",null,{"href":"#","children":"Instagram"}],["$","a",null,{"href":"#","children":"Facebook"}],["$","a",null,{"href":"mailto:contato@flashclip.com","children":"E-mail"}]]}]]}]}]
+1d:["$","link","0",{"rel":"stylesheet","href":"/Paradigmas/_next/static/chunks/3_fgzjlwj6t5r.css","precedence":"next"}]
+1e:["$","script","script-0",{"src":"/Paradigmas/_next/static/chunks/0eqrf_hslh84f.js","async":true}]
+1f:["$","script","script-1",{"src":"/Paradigmas/_next/static/chunks/3dlolswjw273-.js","async":true}]
+20:["$","$L2b",null,{"children":["$","$26",null,{"name":"Next.MetadataOutlet","children":"$@2c"}]}]
+7:300
+2c:null
+29:true
+7:C
+28:0
+11:"$undefined"
+f:"$undefined"
+5:"$undefined"
+27:"$undefined"
+21:"$undefined"

@@ -1,0 +1,7 @@
+:HL["/Paradigmas/_next/static/chunks/3-52tupj1i7rg.css","style"]
+:HL["/Paradigmas/_next/static/chunks/3_z3828fuhmj5.css","style"]
+:HL["/Paradigmas/imagens/logoFlash.webp","image"]
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":"inscricoes","h":96,"c":"$Q3"}]]
+1:[["children",{"s":"(site)","h":112,"c":"$Q2"}]]
+0:{"b":"H_ACkgdqyfVgIwa-L3dcy","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

@@ -1,0 +1,51 @@
+1:"$Sreact.fragment"
+2:"/Paradigmas/_next/static/chunks/0umf92h1sb77c.js"
+3:I[39756,["$2"],"default"]
+4:I[37457,["$2"],"default"]
+9:"/Paradigmas/_next/static/chunks/252-hego4infb.js"
+a:"/Paradigmas/_next/static/chunks/3ds9ridjd0fmb.js"
+b:I[8997,["$9","$a"],"default"]
+c:I[75342,["$9","$a"],"default"]
+d:I[75133,["$9","$a"],"ControleAudio"]
+e:I[17989,["$9","$a"],"default"]
+13:"/Paradigmas/_next/static/chunks/0rzym9m_rguzr.js"
+14:I[24697,["$9","$a","$13"],"default"]
+15:I[16236,["$9","$a","$13"],"default"]
+16:I[66631,["$9","$a","$13"],"UsuarioDesktop"]
+17:I[96154,["$9","$a","$13"],"default"]
+18:I[67963,["$9","$a","$13"],"default"]
+22:"ViewportBoundary"
+23:I[97367,["$2"],"$22"]
+24:"MetadataBoundary"
+25:I[97367,["$2"],"$24"]
+26:"$Sreact.suspense"
+:HL["/Paradigmas/_next/static/chunks/3-52tupj1i7rg.css","style"]
+:HL["/Paradigmas/imagens/logoFlash.webp","image"]
+6:X
+6:C
+7:X
+12:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"data-fc-page":"patrocinadores","style":{"display":"contents"},"children":[["$","header",null,{"className":"navbar","children":[["$","$L14",null,{}],["$","$L15",null,{"href":"/","className":"logo","children":["$","img",null,{"src":"/Paradigmas/imagens/logoFlash.webp","alt":"FlashClip"}]}],["$","nav",null,{"className":"nav-links","children":[["$","$L15","home",{"href":"/","children":"Home"}],["$","$L15","cursos",{"href":"/cursos/","children":"Cursos"}],["$","$L15","programacao",{"href":"/programacao/","children":"Programação"}],["$","$L15","instrutores",{"href":"/instrutores/","children":"Instrutores"}],["$","$L15","patrocinadores",{"href":"/patrocinadores/","className":"ativo","children":"Patrocinadores"}],["$","$L15","contato",{"href":"/contato/","children":"Contato"}],["$","$L15","sobre",{"href":"/sobre/","children":"Sobre"}],["$","$L15","faq",{"href":"/faq/","children":"FAQ"}]]}],["$","div",null,{"className":"nav-acoes","children":[["$","$L16",null,{}],["$","$L15",null,{"href":"/inscricoes/","className":"inscricoes fc-magnetic","children":"Inscrições"}]]}],["$","$L17",null,{"pagina":"patrocinadores"}]]}],["$","main",null,{"children":[["$","section",null,{"className":"patrocinadores-intro","children":[["$","h1",null,{"children":"Nossos Patrocinadores"}],["$","p",null,{"children":"Conheça as empresas que tornam o FlashClip possível."}]]}],["$","section",null,{"className":"patrocinadores","aria-label":"Patrocinadores do FlashClip","children":["$","$L18",null,{}]}],["$","section",null,{"className":"agradecimento","aria-labelledby":"titulo-agradecimento","children":["$","div",null,{"className":"agradecimento-painel","children":["$","div",null,{"className":"agradecimento-conteudo","children":[["$","div",null,{"className":"agradecimento-emblema","aria-hidden":"true"}],["$","span",null,{"className":"agradecimento-etiqueta","children":"UMA MENSAGEM DE GRATIDÃO"}],["$","h2",null,{"id":"titulo-agradecimento","children":"Nosso muito obrigado a todos que acreditam nessa ideia."}],"$L19","$L1a","$L1b"]}]}]}],"$L1c"]}],"$L1d"]}],["$L1e","$L1f"],"$L20"]}],"p":"$@21","v":null,"s":"$7"}}]]
+10:[["children",{"s":"patrocinadores","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}]}]]}],"p":"$@11","v":"$6","s":"$7"},"c":"$Q12"}]]
+8:[["children",{"s":"(site)","h":112,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Paradigmas/_next/static/chunks/3-52tupj1i7rg.css","precedence":"next"}],["$","script","script-0",{"src":"/Paradigmas/_next/static/chunks/252-hego4infb.js","async":true}],["$","script","script-1",{"src":"/Paradigmas/_next/static/chunks/3ds9ridjd0fmb.js","async":true}]],["$","html",null,{"lang":"pt-BR","data-scroll-behavior":"smooth","suppressHydrationWarning":true,"children":["$","body",null,{"children":[["$","$Lb",null,{}],["$","$Lc",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$0:t:t:d:r:props:children:1:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$0:t:t:d:r:props:children:1:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],[]]}]}],["$","$Ld",null,{}],["$","$Le",null,{}]]}]}]]}],"p":"$@f","v":null,"s":"$7"},"c":"$Q10"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","template":["$","$L4",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}]]}],"p":"$@5","v":"$6","s":"$7"},"c":"$Q8"},"h":{"r":["$","$1","h",{"children":[null,["$","$L23",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#030508"}]]}],["$","$L25",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$26",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Patrocinadores | FlashClip"}]]}]}],null]}],null]}],"p":"$@27","v":null,"s":"$7"}},"a":"$@28","u":"$@29","b":"H_ACkgdqyfVgIwa-L3dcy"}
+2a:I[22016,["$9","$a","$13"],""]
+2b:I[97367,["$2"],"OutletBoundary"]
+:HL["/Paradigmas/_next/static/chunks/0q45uo4o8prfu.css","style"]
+19:["$","p",null,{"children":"Agradecemos a cada pessoa que acompanha o FlashClip, compartilha nossa proposta e incentiva a criação de espaços de aprendizado, troca de experiências e novas oportunidades. Cada palavra de apoio e cada gesto de incentivo nos motivam a continuar construindo uma iniciativa que aproxima pessoas por meio da educação, da tecnologia e da inovação."}]
+1a:["$","div",null,{"className":"agradecimento-apoiadores","aria-label":"Valores que inspiram o FlashClip","children":[["$","span","Educação",{"children":"Educação"}],["$","span","Tecnologia",{"children":"Tecnologia"}],["$","span","Inovação",{"children":"Inovação"}]]}]
+1b:["$","p",null,{"className":"agradecimento-fecho","children":"Obrigado por dedicar um momento para conhecer e apoiar a proposta do FlashClip."}]
+1c:["$","section",null,{"className":"cta","children":[["$","span",null,{"children":"SEJA UM APOIADOR"}],["$","h2",null,{"children":"Quer fazer parte dessa história?"}],["$","p",null,{"children":"Entre em contato e descubra como sua empresa pode apoiar as próximas edições do FlashClip."}],["$","$L2a",null,{"href":"/contato/","className":"botao-contato","children":[["$","svg",null,{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"1.7","strokeLinecap":"round","strokeLinejoin":"round","aria-hidden":"true","children":["$","path",null,{"d":"M21 11.5a8.4 8.4 0 0 1-9 8.5 8.7 8.7 0 0 1-4-.9L3 21l1.9-4.5A8.3 8.3 0 0 1 3 12a8.5 8.5 0 0 1 9-8.5 8.5 8.5 0 0 1 9 8.5Z"}]}],"Fale Conosco"]}]]}]
+1d:["$","footer",null,{"children":["$","div",null,{"className":"footer-conteudo","children":[["$","p",null,{"children":"© 2026/2 FlashClip. Todos os direitos reservados."}],["$","div",null,{"className":"contatos","children":[["$","a",null,{"href":"#","children":"Instagram"}],["$","a",null,{"href":"#","children":"Facebook"}],["$","a",null,{"href":"mailto:contato.flashclip@gmail.com","children":"E-mail"}]]}]]}]}]
+1e:["$","link","0",{"rel":"stylesheet","href":"/Paradigmas/_next/static/chunks/0q45uo4o8prfu.css","precedence":"next"}]
+1f:["$","script","script-0",{"src":"/Paradigmas/_next/static/chunks/0rzym9m_rguzr.js","async":true}]
+20:["$","$L2b",null,{"children":["$","$26",null,{"name":"Next.MetadataOutlet","children":"$@2c"}]}]
+7:300
+2c:null
+29:true
+7:C
+28:0
+11:"$undefined"
+f:"$undefined"
+5:"$undefined"
+27:"$undefined"
+21:"$undefined"

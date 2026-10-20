@@ -1,0 +1,38 @@
+1:"$Sreact.fragment"
+2:"/Paradigmas/_next/static/chunks/0umf92h1sb77c.js"
+3:I[39756,["$2"],"default"]
+4:I[37457,["$2"],"default"]
+7:"/Paradigmas/_next/static/chunks/252-hego4infb.js"
+8:"/Paradigmas/_next/static/chunks/3ds9ridjd0fmb.js"
+9:I[8997,["$7","$8"],"default"]
+a:I[75342,["$7","$8"],"default"]
+b:I[75133,["$7","$8"],"ControleAudio"]
+c:I[17989,["$7","$8"],"default"]
+f:"/Paradigmas/_next/static/chunks/3pbhzx3deklw_.js"
+10:"ProvedorTransicaoMatricula"
+11:I[35019,["$7","$8","$f"],"$10"]
+12:I[16236,["$7","$8","$f"],"default"]
+13:"$Sreact.suspense"
+18:"ViewportBoundary"
+19:I[97367,["$2"],"$18"]
+1b:"MetadataBoundary"
+1c:I[97367,["$2"],"$1b"]
+1e:I[68027,[],"default",1]
+:HL["/Paradigmas/_next/static/chunks/3-52tupj1i7rg.css","style"]
+:HL["/Paradigmas/_next/static/chunks/3n5z_8x38l18s.css","style"]
+:HL["/Paradigmas/imagens/logoFlash.webp","image"]
+5:X
+e:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"data-fc-page":"matricula","style":{"display":"contents"},"children":["$","$L11",null,{"children":[["$","header",null,{"className":"navbar navbar-matricula","children":[["$","$L12",null,{"href":"/","className":"logo","children":["$","img",null,{"src":"/Paradigmas/imagens/logoFlash.webp","alt":"FlashClip"}]}],["$","$L12",null,{"href":"/","className":"voltar voltar-evento","children":[["$","span",null,{"className":"voltar-seta","aria-hidden":"true","children":"←"}],["$","span",null,{"children":"Voltar ao evento"}]]}]]}],["$","main",null,{"className":"pagina-matricula","children":["$","section",null,{"className":"card-matricula","children":[["$","div",null,{"className":"cabecalho-matricula","children":[["$","span",null,{"className":"categoria-matricula","children":"CONFIRMAR MATRÍCULA"}],["$","h1",null,{"children":"Curso selecionado"}],["$","p",null,{"children":"Confira as informações do curso antes de confirmar sua matrícula."}]]}],["$","$13",null,{"fallback":[["$","div",null,{"ref":"$undefined","id":"mensagemMatricula","className":"mensagem-matricula","role":"alert","aria-live":"polite","hidden":true,"data-tipo":"$undefined","children":"$undefined"}],["$","div",null,{"id":"curso","aria-live":"polite","children":["$","p",null,{"className":"estado-carregamento","children":"Carregando curso..."}]}],["$","button",null,{"type":"button","id":"botaoConfirmar","className":"botao-confirmar fc-magnetic","disabled":true,"onClick":"$undefined","children":[["$","span",null,{"children":"Confirmar matrícula"}],["$","span",null,{"className":"seta-confirmar","aria-hidden":"true","children":"→"}]]}]],"children":"$L14"}]]}]}]]}]}],["$L15","$L16"],"$L17"]}],"p":false,"v":null}}]]
+d:[["children",{"s":"matricula","h":512,"d":{"r":["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$5"},"c":"$Qe"}]]
+6:[["children",{"s":"(site)","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Paradigmas/_next/static/chunks/3-52tupj1i7rg.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/Paradigmas/_next/static/chunks/252-hego4infb.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/Paradigmas/_next/static/chunks/3ds9ridjd0fmb.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"pt-BR","data-scroll-behavior":"smooth","suppressHydrationWarning":true,"children":["$","body",null,{"children":[["$","$L9",null,{}],["$","$La",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$0:t:t:d:r:props:children:1:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$0:t:t:d:r:props:children:1:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$Lb",null,{}],["$","$Lc",null,{}]]}]}]]}],"p":false,"v":null},"c":"$Qd"}]]
+0:{"P":null,"c":["","matricula",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$5"},"c":"$Q6"},"h":{"r":["$","$1","h",{"children":[null,["$","$L19",null,{"children":"$L1a"}],["$","$L1c",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$13",null,{"name":"Next.Metadata","children":"$L1d"}]}],null]}],null]}],"p":false,"v":null}},"m":"$undefined","G":["$1e",[]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"H_ACkgdqyfVgIwa-L3dcy"}
+1f:I[90828,["$7","$8","$f"],"default"]
+20:I[97367,["$2"],"OutletBoundary"]
+5:C
+14:["$","$L1f",null,{}]
+15:["$","link","0",{"rel":"stylesheet","href":"/Paradigmas/_next/static/chunks/3n5z_8x38l18s.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+16:["$","script","script-0",{"src":"/Paradigmas/_next/static/chunks/3pbhzx3deklw_.js","async":true,"nonce":"$undefined"}]
+17:["$","$L20",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@21"}]}]
+1a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#030508"}]]
+1d:[["$","title","0",{"children":"Confirmar matrícula - FlashClip"}]]
+21:null

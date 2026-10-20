@@ -1,0 +1,6 @@
+:HL["/Paradigmas/_next/static/chunks/3-52tupj1i7rg.css","style"]
+:HL["/Paradigmas/_next/static/chunks/1t8yptw93tp_i.css","style"]
+:HL["/Paradigmas/imagens/logoFlash.webp","image"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"(site)","h":112,"c":"$Q2"}]]
+0:{"b":"H_ACkgdqyfVgIwa-L3dcy","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

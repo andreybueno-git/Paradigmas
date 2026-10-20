@@ -1,0 +1,61 @@
+# Publica no GitHub Pages deste fork a versão React + Next.js do FlashClip
+# (pasta flashclip-next/ da branch feat/nextjs). Roda a cada push no main e pelo botão
+# "Run workflow" na aba Actions; para atualizar o site depois de mudar a feat/nextjs, rode-o de novo.
+name: Publica a versão Next no GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Uma publicação por vez; a que estiver rodando termina antes da próxima.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixa a branch feat/nextjs
+        uses: actions/checkout@v4
+        with:
+          ref: feat/nextjs
+      - name: Prepara o Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: flashclip-next/package-lock.json
+      - name: Configura o Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Gera o site estático
+        working-directory: flashclip-next
+        env:
+          # O site fica em https://<usuário>.github.io/<repositório>/ ; o caminho vem do próprio Pages.
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_TELEMETRY_DISABLED: "1"
+        run: |
+          npm ci
+          npm run build
+      - name: Envia o site para o Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: flashclip-next/out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Publica no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

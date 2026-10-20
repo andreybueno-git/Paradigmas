@@ -12,10 +12,11 @@ function useAudio() {
   return [estado, motor];
 }
 
+// data-audio-* vazios, como no index.html original (sem valor, o JSX escreveria "true").
 export function BotaoMusica() {
   const [{ musica, indisponivel }, motor] = useAudio();
   return (
-    <button type="button" data-audio-music aria-pressed={musica} disabled={indisponivel} onClick={() => motor?.alternarMusica()}>
+    <button type="button" data-audio-music="" aria-pressed={musica} disabled={indisponivel} onClick={() => motor?.alternarMusica()}>
       {indisponivel ? 'Áudio indisponível' : musica ? '♫ Música ligada' : '♫ Música desligada'}
     </button>
   );
@@ -24,7 +25,7 @@ export function BotaoMusica() {
 export function BotaoEfeitos() {
   const [{ efeitos, indisponivel }, motor] = useAudio();
   return (
-    <button type="button" data-audio-effects aria-pressed={efeitos} disabled={indisponivel} onClick={() => motor?.alternarEfeitos()}>
+    <button type="button" data-audio-effects="" aria-pressed={efeitos} disabled={indisponivel} onClick={() => motor?.alternarEfeitos()}>
       {indisponivel ? 'Áudio indisponível' : efeitos ? '♪ Efeitos ligados' : '♪ Efeitos desligados'}
     </button>
   );

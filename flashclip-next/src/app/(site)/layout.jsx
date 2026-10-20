@@ -5,6 +5,8 @@
 import '@/estilos/global/experiencia.css';
 import Experiencia from '@/componentes/Experiencia';
 import { ControleAudio } from '@/componentes/Audio';
+import ProvedorUsuario from '@/componentes/usuario/ProvedorUsuario';
+import RolagemDeRota from '@/componentes/RolagemDeRota';
 
 export const metadata = {
   title: 'FlashClip',
@@ -15,10 +17,14 @@ export const viewport = {
 };
 
 export default function LayoutSite({ children }) {
+  // suppressHydrationWarning: na carga direta da home, o script inline da tela de carregamento marca
+  // o <html> (fc-loading/fc-loaded-before, data-load-state) antes da hidratação. Só vale para os
+  // atributos do próprio <html>.
   return (
-    <html lang="pt-BR" data-scroll-behavior="smooth">
+    <html lang="pt-BR" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body>
-        {children}
+        <RolagemDeRota />
+        <ProvedorUsuario>{children}</ProvedorUsuario>
         <ControleAudio />
         <Experiencia />
       </body>

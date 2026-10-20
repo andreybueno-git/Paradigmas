@@ -1,14 +1,17 @@
 # Migração do FlashClip para React + Next.js: convenções
 
 Este documento vale para todo o código em `flashclip-next/`. Fonte da verdade do comportamento e do
-visual: o site estático em `../FlashClip/` (branch atual). As especificações detalhadas de cada área
-estão em `SPEC_DIR` (ver abaixo); quando elas divergirem deste documento ou de `critica.md`, **este
-documento vence**, depois `critica.md`.
+visual: o site estático em `../FlashClip/`. A conversão foi feita por páginas e comparada com o original
+(prints em 1280 e 390 px, estilos computados e comportamentos), com o Supabase simulado.
 
-SPEC_DIR = `/tmp/claude-0/-home-user-Paradigmas/7f6d1033-e7ee-5a89-ba54-e773dec1d494/scratchpad/next-spec/`
-(`home.md`, `cursos.md`, `conta.md`, `paginas.md`, `compartilhado.md`, `admin.md`, `next16.md`, `critica.md`).
-As specs citam a versão `e6f2e99`; o site atual (`../FlashClip`) já inclui a correção `32b9032`
-(sem animação entre telas, tela de carregamento uma vez por aba, música agendada 1 s à frente).
+## Como rodar
+```bash
+cd flashclip-next
+npm install
+npm run dev        # http://localhost:3000 (gera os CSS por página antes)
+npm run build      # gera o site estático em out/
+NEXT_PUBLIC_BASE_PATH=/Paradigmas npm run build   # para publicar em https://<usuário>.github.io/Paradigmas/
+```
 
 ## Objetivo
 Mesmo visual e comportamento do site atual (paridade), em componentes React idiomáticos, com navegação
@@ -29,7 +32,7 @@ no cliente: o layout não desmonta, então a música continua entre as telas sem
 | `admin/admin.html` | `/admin/` | `src/app/(admin)/admin/page.jsx` |
 
 `(site)` e `(admin)` têm **layouts raiz separados**. Ir para o admin e voltar é recarga completa (sem música no admin).
-`matricula` lê `?curso=` com `useSearchParams()` dentro de `<Suspense>`.
+`matricula` lê `?id=` (como o original e os links dos cards; `?curso=` também é aceito) com `useSearchParams()` dentro de `<Suspense>`.
 
 ## CSS: um pacote por página (não editar o CSS gerado)
 - Os CSS originais estão **sem alteração** em `legado/css/` (as imagens em `legado/imagens/`).
@@ -90,10 +93,7 @@ no cliente: o layout não desmonta, então a música continua entre as telas sem
   `document.querySelector` global (recebem o elemento raiz/refs).
 - Three.js e módulos pesados: `import()` dinâmico dentro do `useEffect` (nunca no servidor).
 
-## Regras de trabalho para os agentes
-- Escreva **só** nos arquivos da sua tarefa. Precisou mudar um arquivo compartilhado? Descreva a mudança
-  no seu relatório final em vez de editá-lo (exceto se a tarefa disser que ele é seu).
-- Não rode `next build` nem `next dev` (o `.next/` é compartilhado). Para checar a sintaxe:
-  `npm run -s checar -- <arquivos>` (esbuild). A integração compila depois.
-- Não faça commit. Não use o nome do Claude/Anthropic em nada (código, comentários, textos).
+## Regras para quem for mexer no código
+- Não edite `src/estilos/paginas/` (é gerado): mude `legado/css/` e rode `npm run estilos`.
+- Checagem rápida de sintaxe sem compilar o site: `npm run -s checar -- <arquivos>` (esbuild).
 - Comentários e nomes em português, no estilo do código existente.

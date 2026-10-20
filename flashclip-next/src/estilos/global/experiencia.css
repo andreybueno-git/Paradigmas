@@ -14,6 +14,10 @@
 .fc-audio-dock { position: fixed; z-index: 50; right: 14px; bottom: 12px; display: flex; gap: 14px; padding: 8px 15px; background: #080d11f0; border: 1px solid #f5bd3d36; border-radius: 25px; backdrop-filter: blur(10px); }
 .fc-audio-dock button { background: none; border: 0; color: #c9cdd1; font: 10px 'Avenir Next', Arial, sans-serif; cursor: pointer; padding: 5px 0; }
 .fc-audio-dock button:hover { color: var(--fc-gold); }
+/* Na home a barra era filha do <body class="natal-theme">: o foco e a seleção dela seguiam o natal.css
+   (.natal-theme :focus-visible e .natal-theme ::selection), que agora só valem dentro do wrapper. */
+body:has([data-fc-page~="home"].natal-theme) .fc-audio-dock :focus-visible { outline: 2px solid var(--fc-gold); outline-offset: 6px; }
+body:has([data-fc-page~="home"].natal-theme) .fc-audio-dock ::selection { background: var(--fc-gold); color: var(--fc-ink); }
 /* Durante a abertura e a tela de carregamento da home a barra some (como no site original). */
 body:has([data-fc-page~="home"].fc-entry-active) .fc-audio-dock { display: none; }
 html.fc-loading .fc-audio-dock { visibility: hidden; }

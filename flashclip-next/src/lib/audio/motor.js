@@ -43,8 +43,8 @@ function criarMotor() {
     instantaneo = { musica: music, efeitos: effects, indisponivel: unavailable };
     for (const ouvinte of ouvintes) ouvinte();
   }
-  // O estado vai para o body para o CSS reagir, se precisar.
-  function setState() { if (context && document.body) document.body.dataset.audio = context.state; }
+  // O original copiava context.state para body.dataset.audio, mas nada lia esse atributo; aqui ele
+  // não existe (o <body> sobrevive às rotas e não guarda estado).
   function init() {
     if (context || unavailable) return;
     const Audio = window.AudioContext || window.webkitAudioContext;
@@ -63,7 +63,6 @@ function criarMotor() {
     const wet = context.createGain(); wet.gain.value = .14; lowpass.connect(wet); wet.connect(musicOutput);
     // Um resume tardio (gesto seguinte, volta de interrupção no iOS) também retoma a trilha.
     context.onstatechange = () => {
-      setState();
       if (context.state !== 'running' || !unlocked) return;
       if (!session.unlocked) { session.unlocked = true; write('sessionStorage', SESSION, session); }
       buttonUnlockTried = false; flushEffect(); reconcile();
@@ -119,7 +118,6 @@ function criarMotor() {
       if (step % 16 === 0) for (const midi of chords[Math.floor(index / 16)]) tone(hz(midi), nextNote, beat * 5, .09, musicBus, 'triangle');
       nextNote += subdivision; step++;
     }
-    setState();
   }
   function reconcile() {
     const current = ++revision;
@@ -148,9 +146,8 @@ function criarMotor() {
         nextNote = context.currentTime + .06; step = Math.ceil((Date.now() / 1000 + .06 - session.epoch) / subdivision);
         timer = setInterval(schedule, 100); schedule();
       }
-      setState();
     }).catch(error => {
-      if (current === revision) { stopMusic(); setState(); }
+      if (current === revision) stopMusic();
       console.warn('Não foi possível atualizar a reprodução de áudio.', error);
     });
     return lifecycle;

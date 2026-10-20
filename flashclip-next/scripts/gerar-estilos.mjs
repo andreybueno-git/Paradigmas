@@ -103,6 +103,21 @@ function plugin({ pagina, noBody = [] }) {
         if (regra.parent?.type === 'atrule' && /keyframes$/i.test(regra.parent.name)) return;
         regra.selector = transformar.processSync(regra.selector);
       });
+      // O navegador descarta uma declaração que mistura uma palavra-chave global com outros valores
+      // (`font: 10px inherit` em globo.css). O minificador do build junta ela com as longhands seguintes
+      // num `font:10px inherit` só, e o botão perde `font-family: inherit; font-size: 10px`.
+      raiz.walkDecls(declaracao => {
+        if (declaracao.prop.startsWith('--')) return;
+        const partes = declaracao.value.trim().split(/\s+/);
+        if (partes.length > 1 && partes.some(parte => /^(inherit|initial|unset|revert|revert-layer)$/i.test(parte))) declaracao.remove();
+      });
+      // Lightning CSS (Turbopack) descarta o backdrop-filter sem prefixo quando o -webkit- vem
+      // depois dele na mesma regra (só sobra o prefixado, que o Chrome ignora). O legado sempre
+      // escreve nessa ordem; com o prefixado antes, saem os dois.
+      raiz.walkDecls('-webkit-backdrop-filter', prefixada => {
+        const semPrefixo = prefixada.parent.nodes.find(no => no.type === 'decl' && no.prop === 'backdrop-filter');
+        if (semPrefixo && prefixada.parent.index(semPrefixo) < prefixada.parent.index(prefixada)) semPrefixo.before(prefixada);
+      });
       // url() com parser de valores: regex pegaria o url(%23n) que existe dentro de um data: (natal.css).
       const origem = raiz.source.input.file;
       raiz.walkDecls(declaracao => {
